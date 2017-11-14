@@ -53,7 +53,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">EV <span class="lite">ENTOS</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -69,9 +69,44 @@
       </div>
 
       <div class="top-nav notification-row">
+
         <!-- notificatoin dropdown start-->
         <ul class="nav pull-right top-menu">
-
+          <!-- user login dropdown start-->
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                            <img src="img/avatar2_small.jpg" alt=""/>
+                            </span>
+                            <span class="username">Mateo Pagniez</span>
+                            <b class="caret"></b>
+                        </a>
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                <a href="#"><i class="icon_profile"></i> My Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_chat_alt"></i> Chats</a>
+              </li>
+              <li>
+                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+              </li>
+              <li>
+                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+              </li>
+              <li>
+                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+              </li>
+            </ul>
+          </li>
+          <!-- user login dropdown end -->
           <!-- task notificatoin start -->
           <li id="task_notificatoin_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -268,41 +303,6 @@
             </ul>
           </li>
           <!-- alert notification end-->
-          <!-- user login dropdown start-->
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
-                            </span>
-                            <span class="username">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
-            <ul class="dropdown-menu extended logout">
-              <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> My Profile</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_chat_alt"></i> Chats</a>
-              </li>
-              <li>
-                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
-            </ul>
-          </li>
-          <!-- user login dropdown end -->
         </ul>
         <!-- notificatoin dropdown end-->
       </div>
@@ -317,7 +317,7 @@
           <li class="active">
             <a class="" href="index.html">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Home</span>
                       </a>
           </li>
           <li class="sub-menu">
@@ -392,7 +392,6 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
@@ -406,58 +405,43 @@
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-              <div class="count">6.674</div>
+              <i class="fa fa-calendar"></i>
+              <div class="count">32</div>
               <div class="title">Eventos Activos</div>
             </div>
-            <!--/.info-box-->
           </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
-              <div class="count">7.538</div>
-              <div class="title">Clientes Activos</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">
-              <i class="fa fa-thumbs-o-up"></i>
-              <div class="count">4.362</div>
+              <i class="fa fa-calendar"></i>
+              <div class="count">50</div>
               <div class="title">Eventos Totales</div>
             </div>
-            <!--/.info-box-->
           </div>
-          <!--/.col-->
+
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <i class="fa fa-user"></i>
+              <div class="count">342</div>
+              <div class="title">Clientes Activos</div>
+            </div>
+          </div>
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
-              <div class="count">1.426</div>
+              <i class="fa fa-user"></i>
+              <div class="count">642</div>
               <div class="title">Clientes Totales</div>
             </div>
-            <!--/.info-box-->
           </div>
-          <!--/.col-->
-
         </div>
-        <!--/.row-->
-
-
-        <!-- Today status end -->
-
-
-
+        <!-- EVENTOS ACTIVOS -->
         <div class="row">
 
           <div class="col-lg-12 col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2><i class="fa fa-flag-o red"></i><strong>Eventos Activos</strong></h2>
+                <h2><i class="fa fa-users"></i><strong>Eventos Activos</strong></h2>
                 <div class="panel-actions">
                   <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
                   <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -468,20 +452,19 @@
                 <table class="table bootstrap-datatable countries">
                   <thead>
                     <tr>
-                      <th></th>
+                      <!-- <th></th> -->
                       <th>Evento</th>
                       <th>Cliente</th>
                       <th>Lugar</th>
-                      <th>Presupuesto</th>
+                      <!-- <th>Presupuesto</th> -->
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Germany</td>
-                      <td>2563</td>
-                      <td>1025</td>
-                      <td>
+                      <td>Fiesta de 15</td>
+                      <td>Juan Perez</td>
+                      <td>CABA</td>
+                      <!-- <td>
                         <div class="progress thin">
                           <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
                           </div>
@@ -489,14 +472,13 @@
                           </div>
                         </div>
                         <span class="sr-only">73%</span>
-                      </td>
+                      </td> -->
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>India</td>
-                      <td>3652</td>
-                      <td>2563</td>
-                      <td>
+                      <td>Casamiento</td>
+                      <td>Alejandra Romez</td>
+                      <td>Ing. Maschwitz</td>
+                      <!-- <td>
                         <div class="progress thin">
                           <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
                           </div>
@@ -504,107 +486,13 @@
                           </div>
                         </div>
                         <span class="sr-only">57%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Spain</td>
-                      <td>562</td>
-                      <td>452</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
-                          </div>
-                        </div>
-                        <span class="sr-only">93%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Russia</td>
-                      <td>1258</td>
-                      <td>958</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>USA</td>
-                      <td>4856</td>
-                      <td>3621</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Brazil</td>
-                      <td>265</td>
-                      <td>102</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Coloumbia</td>
-                      <td>265</td>
-                      <td>102</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>France</td>
-                      <td>265</td>
-                      <td>102</td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
+                      </td> -->
                     </tr>
                   </tbody>
                 </table>
               </div>
-
             </div>
-
           </div>
-          <!--/col-->
-
         </div>
       </section>
     </section>
