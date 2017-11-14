@@ -1,3 +1,7 @@
+$(function () {
+                $('#datetimepicker1').datepicker();
+            });
+
 var Script = function () {
 
     $.validator.setDefaults({
@@ -42,10 +46,10 @@ var Script = function () {
                 },
                 agree: "required"
             },
-            messages: {                
-                fullname: {
-                    required: "Please enter a Full Name.",
-                    minlength: "Your Full Name must consist of at least 6 characters long."
+            messages: {
+                cliente: {
+                    required: "Por favor, ingrese un Cliente",
+                    minlength: "Es muy cortito gato lava tapper"
                 },
                 address: {
                     required: "Please enter a Address.",
