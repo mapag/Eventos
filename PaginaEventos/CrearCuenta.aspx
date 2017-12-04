@@ -34,29 +34,29 @@
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="first_name">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="first_name" placeholder="First Name">
+                        <input type="text" class="form-control" name="nombre" id="first_name" placeholder="First Name"/>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="last_name">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" id="" placeholder="Last Name">
+                        <input type="text" class="form-control" name="apellido" id="" placeholder="Last Name"/>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" name="email" id="" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="" placeholder="Email"/>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" id="password" placeholder="Password">
+                        <input type="password" class="form-control" name="contrasena" id="password" placeholder="Password"/>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="confirm_password">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" name="" id="confirm_password" placeholder="Confirm Password">
+                        <input type="password" class="form-control" name="" id="confirm_password" placeholder="Confirm Password"/>
                     </div>
                 </fieldset>
 
