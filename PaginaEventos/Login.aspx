@@ -32,19 +32,20 @@
                 <p class="login-img"><i class="icon_lock_alt"></i></p>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_profile"></i></span>
-                    <input type="text" class="form-control" placeholder="Username" autofocus />
+                    <asp:TextBox ID="txt_mail" runat="server" class="form-control" placeholder="Correo Electronico" autofocus=""></asp:TextBox>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                    <input type="password" class="form-control" placeholder="Password" />
+                    <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Password" autofocus=""></asp:TextBox>
                 </div>
                 <label class="checkbox">
-                    <input type="checkbox" value="remember-me" />
-                    Remember me
-                    <span class="pull-right"><a href="#">Forgot Password?</a></span>
+                    <asp:CheckBox ID="chc_Recordarme" runat="server" />
+                    Recuerdame
+                    <span class="pull-right"><a href="CambiarContrasena.aspx">¿Olvidó su contraseña?</a></span>
                 </label>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-                <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+                <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
+                <asp:Button ID="btn_conectar" runat="server" Text="Conectarse" class="btn btn-primary btn-lg btn-block" OnClick="btn_conectar_Click" />
+                <asp:Button ID="btn_registrarse" runat="server" Text="Registrarse" class="btn btn-info btn-lg btn-block" OnClick="btn_registrarse_Click" />
             </div>
         </form>
     </div>
