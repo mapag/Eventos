@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Inicio.aspx.cs" Inherits="Inicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Invitados.aspx.cs" Inherits="Invitados" %>
 
 <!DOCTYPE html>
 
@@ -36,10 +36,10 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
-
 </head>
 <body>
-    <section id="container" class="" runat="server">
+    <section id="container" class="">
+
 
         <header class="header dark-bg">
             <div class="toggle-nav">
@@ -49,6 +49,18 @@
             <!--logo start-->
             <a href="index.html" class="logo">EV <span class="lite">ENTOS</span></a>
             <!--logo end-->
+
+            <div class="nav search-row" id="top_menu">
+                <!--  search form start -->
+                <ul class="nav top-menu">
+                    <li>
+                        <form class="navbar-form">
+                            <input class="form-control" placeholder="Search" type="text">
+                        </form>
+                    </li>
+                </ul>
+                <!--  search form end -->
+            </div>
 
             <div class="top-nav notification-row">
 
@@ -295,116 +307,184 @@
         <script src="barraLateral.js"></script>
         <!--sidebar end-->
 
+        <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>Dashboard</h3>
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Invitados</h3>
                         <ol class="breadcrumb">
-                            <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                            <li><i class="fa fa-laptop"></i>Dashboard</li>
+                            <li><i class="fa fa-home"></i><a href="index.html">HOME</a></li>
+                            <li><i class="fa fa-laptop"></i>Invitados</li>
+                            <li><i class="fa fa-laptop"></i>Crear</li>
                         </ol>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box blue-bg">
-                            <i class="fa fa-calendar"></i>
-                            <div class="count">32</div>
-                            <div class="title">Eventos Activos</div>
-                        </div>
-                    </div>
+                <a href="crearEvento.html">
+                    <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;"><i class="fa fa-plus" style="padding-right: 10px;"></i>Agregar Invitado</button></a>
 
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box dark-bg">
-                            <i class="fa fa-calendar"></i>
-                            <div class="count">50</div>
-                            <div class="title">Eventos Totales</div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box brown-bg">
-                            <i class="fa fa-user"></i>
-                            <div class="count">342</div>
-                            <div class="title">Clientes Activos</div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box green-bg">
-                            <i class="fa fa-user"></i>
-                            <div class="count">642</div>
-                            <div class="title">Clientes Totales</div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="CrearCuenta.aspx">
-                    <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;"><i class="fa fa-plus" style="padding-right: 10px;"></i>Crear Evento</button></a>
                 <!-- EVENTOS ACTIVOS -->
-                <div class="row" runat="server">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <header class="panel-heading" style="text-align: center;">
+                                INVITADOS ACTIVOS
+                            </header>
 
-                    <div class="col-lg-12 col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2><i class="fa fa-users"></i><strong>Eventos Activos</strong></h2>
-                                <div class="panel-actions">
-                                    <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                                    <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                                    <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table bootstrap-datatable countries">
-                                    <thead>
-                                        <tr>
-                                            <!-- <th></th> -->
-                                            <th>Evento</th>
-                                            <th>Cliente</th>
-                                            <th>Lugar</th>
-                                            <th>
-                                                <!-- <th>Presupuesto</th> -->
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Fiesta de 15</td>
-                                            <td>Juan Perez</td>
-                                            <td>CABA</td>
-                                            <td><a href="adminevent.html">
-                                                <button class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 10px;"></i>Administrar</button></a></td>
-                                            <!-- <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
-                          </div>
-                        </div>
-                        <span class="sr-only">73%</span>
-                      </td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>Casamiento</td>
-                                            <td>Alejandra Romez</td>
-                                            <td>Ing. Maschwitz</td>
-                                            <td><a href="adminevent.html">
-                                                <button class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 10px;"></i>Administrar</button></a></td>
-                                            <!-- <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
-                          </div>
-                        </div>
-                        <span class="sr-only">57%</span>
-                      </td> -->
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                            <table class="table table-striped table-advance table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th><i class="icon_profile"></i>Full Name</th>
+                                        <th><i class="icon_calendar"></i>Date</th>
+                                        <th><i class="icon_mail_alt"></i>Email</th>
+                                        <th><i class="icon_pin_alt"></i>City</th>
+                                        <th><i class="icon_mobile"></i>Mobile</th>
+                                        <th><i class="icon_cogs"></i>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Angeline Mcclain</td>
+                                        <td>2004-07-06</td>
+                                        <td>dale@chief.info</td>
+                                        <td>Rosser</td>
+                                        <td>176-026-5992</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sung Carlson</td>
+                                        <td>2011-01-10</td>
+                                        <td>ione.gisela@high.org</td>
+                                        <td>Robert Lee</td>
+                                        <td>724-639-4784</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bryon Osborne</td>
+                                        <td>2006-10-29</td>
+                                        <td>sol.raleigh@language.edu</td>
+                                        <td>York</td>
+                                        <td>180-456-0056</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dalia Marquez</td>
+                                        <td>2011-12-15</td>
+                                        <td>angeline.frieda@thick.com</td>
+                                        <td>Alton</td>
+                                        <td>690-601-1922</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Selina Fitzgerald</td>
+                                        <td>2003-01-06</td>
+                                        <td>moshe.mikel@parcelpart.info</td>
+                                        <td>Waelder</td>
+                                        <td>922-810-0915</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abraham Avery</td>
+                                        <td>2006-07-14</td>
+                                        <td>harvey.jared@pullpump.org</td>
+                                        <td>Harker Heights</td>
+                                        <td>511-175-7115</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caren Mcdowell</td>
+                                        <td>2002-03-29</td>
+                                        <td>valeria@hookhope.org</td>
+                                        <td>Blackwell</td>
+                                        <td>970-147-5550</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Owen Bingham</td>
+                                        <td>2013-04-06</td>
+                                        <td>thomas.christopher@firstfish.info</td>
+                                        <td>Rule</td>
+                                        <td>934-118-6046</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ahmed Dean</td>
+                                        <td>2008-03-19</td>
+                                        <td>lakesha.geri.allene@recordred.com</td>
+                                        <td>Darrouzett</td>
+                                        <td>338-081-8817</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mario Norris</td>
+                                        <td>2010-02-08</td>
+                                        <td>mildred@hour.info</td>
+                                        <td>Amarillo</td>
+                                        <td>945-547-5302</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                                <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                                                <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
                 </div>
             </section>
