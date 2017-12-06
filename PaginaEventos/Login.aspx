@@ -36,7 +36,7 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                    <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Password" autofocus=""></asp:TextBox>
+                    <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Contraseña" type="password" autofocus=""></asp:TextBox>
                 </div>
                 <label class="checkbox">
                     <asp:CheckBox ID="chc_Recordarme" runat="server" />

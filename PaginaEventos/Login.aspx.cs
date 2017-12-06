@@ -12,7 +12,7 @@ public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        lbl_error.ForeColor = Color.Red;
     }
     protected void btn_conectar_Click(object sender, EventArgs e)
     {
@@ -29,7 +29,6 @@ public partial class Login : System.Web.UI.Page
             }
             catch
             {
-                lbl_error.ForeColor = Color.OrangeRed;
                 lbl_error.Text = "La cuenta no existe o la contraseña es erronea.";
             }
         }

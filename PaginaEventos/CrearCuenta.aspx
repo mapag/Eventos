@@ -28,59 +28,60 @@
 <body class="login-img2-body">
 
     <div class="container">
-        <form id="form1" runat="server" class="login-form" method="get" action="php/register.php">
+        <form id="form1" runat="server" class="login-form">
             <div class="login-wrap">
                 <p class="login-img"><i class="icon_lock_alt"></i>REGISTRO<i class="icon_lock_alt"></i></p>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="first_name">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="first_name" placeholder="First Name"/>
+                        <asp:Label ID="lbl_nombre" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_nombre" runat="server" class="form-control" placeholder="Nombre" ></asp:TextBox>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="last_name">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" id="" placeholder="Last Name"/>
+                        <asp:Label ID="lbl_apellido" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_apellido" runat="server" class="form-control" placeholder="Apellido" ></asp:TextBox>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" name="email" id="" placeholder="Email"/>
+                        <asp:Label ID="lbl_email" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_email" runat="server" class="form-control" placeholder="Email" ></asp:TextBox>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" id="password" placeholder="Password"/>
+                        <asp:Label ID="lbl_contrasena" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Contraseña" ></asp:TextBox>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="confirm_password">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" name="" id="confirm_password" placeholder="Confirm Password"/>
+                        <asp:Label ID="lbl_confirm_contrasena" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_confirm_contrasena" runat="server" class="form-control" placeholder="Confirmar contraseña" ></asp:TextBox>
                     </div>
                 </fieldset>
 
                 <div class="form-group">
                     <div class="col-md-12">
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" id="" />
-                                I accept the <a href="#">terms and conditions</a>.
-                            </label>
+                            <asp:CheckBox ID="chc_confirmartyc" runat="server" />Acepto los <a href="#">Terminos y condiciones</a>.
                         </div>
                     </div>
                 </div>
-
+                <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary">
-                            Register
-                        </button>
-                        <span class="pull-right"><a href="login.html">Ya estas registrado?</a></span>
+                        <asp:Button ID="btn_registrar" runat="server" Text="Registrar" class="btn btn-primary" OnClick="btn_registrar_Click" />
+                        <span class="pull-right"><a href="Login.aspx">Ya estas registrado?</a></span>
                     </div>
                 </div>
             </div>
         </form>
+        <p></p>     
     </div>
 
 </body>

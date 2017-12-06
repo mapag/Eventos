@@ -224,7 +224,7 @@
                             <li>
                                 <a href="#">
                                     <span class="photo">
-                                        <img alt="avatar" src="./img/avatar-mini4.jpg"></span>
+                                        <img alt="avatar" src="./img/avatar-mini4.jpg"/></span>
                                     <span class="subject">
                                         <span class="from">Ray   Munoz</span>
                                         <span class="time">1 day</span>
@@ -292,7 +292,7 @@
         <!--header end-->
 
         <!--sidebar start-->
-        <script src="barraLateral.js"></script>
+        <script src="js/barraLateral.js"></script>
         <!--sidebar end-->
 
         <section id="main-content">

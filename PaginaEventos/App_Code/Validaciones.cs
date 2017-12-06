@@ -20,5 +20,17 @@ public class Validaciones
     {
         return Regex.IsMatch( texto, "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
     }
+    public bool Numerico(string texto)
+    {
+        return Regex.IsMatch(texto, "^[0-9 ]+$");
+    }
+    public bool Alfabetico(string texto)
+    {
+        return Regex.IsMatch(texto, "^[a-zA-Z ]+$");
+    }
+    public bool Alfanumerico(string texto)
+    {
+        return Regex.IsMatch(texto, "^[a-zA-Z0-9]+$");
+    }
 
 }
