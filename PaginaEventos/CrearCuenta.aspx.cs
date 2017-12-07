@@ -53,6 +53,7 @@ public partial class CrearCuenta : System.Web.UI.Page
         if (!chc_confirmartyc.Checked)
         {
             lbl_error.Text = "Debe aceptar los terminos y condiciones";
+            correcto = false;
         }
         if (correcto)
         {

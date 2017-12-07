@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-lg-8 mx-auto">
                         <p class="text-faded mb-5">DEJALO EN NUESTRAS MANOS!</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Más de nosotros</a>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Más de nosotros</a>
                     </div>
                 </div>
             </div>
