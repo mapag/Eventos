@@ -30,7 +30,6 @@
        <!--CABECERA start-->
         <asp:Label ID="lbl_cabecera" runat="server" Text=""></asp:Label>
         <!--CABECERA end-->
-
         <script src="Login.aspx"></script>
         <!--BARRA LATERAL start-->
         <script src="js/barraLateral.js"></script>

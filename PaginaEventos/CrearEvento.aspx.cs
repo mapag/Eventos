@@ -11,7 +11,7 @@ public partial class CrearEvento : System.Web.UI.Page
     AccesoDatos ad = new AccesoDatos();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["CodigoCuenta"] = 1;
+        if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
         if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
         string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
         if (imagen == null) imagen = "img/avatar2_small.jpg";

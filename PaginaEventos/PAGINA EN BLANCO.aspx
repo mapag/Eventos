@@ -40,7 +40,7 @@
 </head>
 <body>
     <section id="container" class="" runat="server">
-       
+
         <!--CABECERA start-->
         <asp:Label ID="lbl_cabecera" runat="server" Text=""></asp:Label>
         <!--CABECERA end-->
@@ -108,6 +108,6 @@
                 }
             });
         });
-</script>
+    </script>
 </body>
 </html>
