@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <div class="checkbox">
-                            <asp:CheckBox ID="chc_confirmartyc" runat="server" />Acepto los <a href="#">Terminos y condiciones</a>.
+                            <asp:CheckBox ID="chc_confirmartyc" runat="server" />Acepto los <a href="TerminosCondiciones.aspx">Terminos y condiciones</a>.
                         </div>
                     </div>
                 </div>

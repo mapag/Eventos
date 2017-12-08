@@ -7,3 +7,10 @@
   margin-left: auto;
   margin-bottom: 30px;
 }
+
+body .modal {
+    /* new custom width */
+    width: 1000px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -280px;
+}
