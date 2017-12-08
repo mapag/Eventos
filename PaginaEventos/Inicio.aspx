@@ -341,7 +341,7 @@
                     </div>
                 </div>
 
-                <a href="CrearCuenta.aspx">
+                <a href="CrearEvento.aspx">
                     <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;"><i class="fa fa-plus" style="padding-right: 10px;"></i>Crear Evento</button></a>
                 <!-- EVENTOS ACTIVOS -->
                 <div class="row" runat="server">

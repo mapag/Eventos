@@ -304,7 +304,7 @@
         <!--header end-->
 
         <!--sidebar start-->
-        <script src="barraLateral.js"></script>
+        <script src="js/barraLateral.js"></script>
         <!--sidebar end-->
 
         <!--main content start-->
