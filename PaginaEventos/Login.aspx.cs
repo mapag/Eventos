@@ -23,7 +23,7 @@ public partial class Login : System.Web.UI.Page
         {
             try
             {
-                Session["codCuenta"] = ad.ObtenerValor(consultaSQL);
+                Session["CodigoCuenta"] = ad.ObtenerValor(consultaSQL);
                 ad.EjecutarConsulta(consultaSQL);
                 Response.Redirect("Inicio.aspx");
             }
