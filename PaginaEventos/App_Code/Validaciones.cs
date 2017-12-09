@@ -33,4 +33,36 @@ public class Validaciones
         return Regex.IsMatch(texto, "^[a-zA-Z0-9]+$");
     }
 
+    public bool ComparacionFechas(string[] fecha1, string comparador, string[] fecha2) // fecha[0] = año, fecha[1] = mes,  fecha[2] = dia
+    {
+        bool correcto = true;
+        switch (comparador)
+        {
+            case "==":
+                if (int.Parse(fecha1[0]) != int.Parse(fecha2[0]) || int.Parse(fecha1[1]) != int.Parse(fecha2[1]) || int.Parse(fecha1[2]) != int.Parse(fecha2[2])) correcto = false;
+                break;
+            case ">":
+                if (int.Parse(fecha1[0]) < int.Parse(fecha2[0])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) < int.Parse(fecha2[1])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) == int.Parse(fecha2[1]) && int.Parse(fecha1[2]) <= int.Parse(fecha2[2])) correcto = false;
+                break;
+            case ">=":
+                if (int.Parse(fecha1[0]) < int.Parse(fecha2[0])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) < int.Parse(fecha2[1])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) == int.Parse(fecha2[1]) && int.Parse(fecha1[2]) < int.Parse(fecha2[2])) correcto = false;
+                break;
+            case "<":
+                if (int.Parse(fecha1[0]) > int.Parse(fecha2[0])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) > int.Parse(fecha2[1])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) == int.Parse(fecha2[1]) && int.Parse(fecha1[2]) >= int.Parse(fecha2[2])) correcto = false;
+                break;
+            case "<=":
+                if (int.Parse(fecha1[0]) > int.Parse(fecha2[0])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) > int.Parse(fecha2[1])) correcto = false;
+                else if (int.Parse(fecha1[0]) == int.Parse(fecha2[0]) && int.Parse(fecha1[1]) == int.Parse(fecha2[1]) && int.Parse(fecha1[2]) > int.Parse(fecha2[2])) correcto = false;
+                break;
+        }
+        return correcto;
+    }
+
 }

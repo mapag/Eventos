@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <label for="address" class="control-label col-lg-2">Tipo de evento <span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <asp:DropDownList ID="ddl_tipoevento" class="form-control" runat="server"></asp:DropDownList>
+                                               <asp:DropDownList ID="ddl_tipoevento" class="form-control" runat="server"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="form-group ">
@@ -92,7 +92,7 @@
                                                 <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
                                                 <asp:TextBox ID="txt_timeinicio" runat="server" class="form-control"  type="time"></asp:TextBox>
                                             </div>
-                                            <label class="control-label col-lg-2">Fecha de Fin<span class="required">*</span></label>
+                                            <label class="control-label col-lg-2">Fecha de Fin</label>
                                             <div class="input-group registration-date-time col-lg-10">
                                                 <span class="input-group-addon" id="basic-addon3"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
                                                 <asp:TextBox ID="txt_datafin" runat="server" class="form-control" Type="date"></asp:TextBox>
@@ -100,12 +100,20 @@
                                                 <asp:TextBox ID="txt_timefin" runat="server" class="form-control"  type="time"></asp:TextBox>
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <div class="col-lg-offset-2 col-lg-10">
-                                                <asp:Button ID="btnGuardar" class="btn btn-primary" runat="server" Text="Guardar" />
-                                                <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" Text="Cancelar" />
+                                                <asp:Button ID="btnGuardar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+                                                <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
                                             </div>
+                                        </div>
+                                        <div>
+                                            <asp:Label ID="lbl_error1" runat="server" Text="" class="col-lg-12"></asp:Label>
+                                        </div>
+                                        <div>
+                                            <asp:Label ID="lbl_error2" runat="server" Text="" class="col-lg-12"></asp:Label>
+                                        </div>
+                                        <div>
+                                            <asp:Label ID="lbl_error3" runat="server" Text="" class="col-lg-12"></asp:Label>
                                         </div>
                                     </form>
                                 </div>
