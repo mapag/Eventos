@@ -17,5 +17,8 @@ public partial class CrearEvento : System.Web.UI.Page
         if (imagen == null) imagen = "img/avatar2_small.jpg";
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
         lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, 10, 20);
+
+
+        ad.AgregaraDropDownListIDyVAL(ref ddl_tipoevento, "Select codigo, descripcion from tipos_eventos");
     }
 }

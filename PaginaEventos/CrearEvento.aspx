@@ -21,13 +21,25 @@
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- full calendar css-->
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
+    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
     <!-- Custom styles -->
+    <link rel="stylesheet" href="css/fullcalendar.css" />
+    <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/xcharts.min.css" rel=" stylesheet" />
+    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
 </head>
 <body>
     <section id="container" class="" runat="server">
-       <!--CABECERA start-->
+        <!--CABECERA start-->
         <asp:Label ID="lbl_cabecera" runat="server" Text=""></asp:Label>
         <!--CABECERA end-->
         <script src="Login.aspx"></script>
@@ -57,48 +69,38 @@
                             </header>
                             <div class="panel-body">
                                 <div class="form">
-                                    <form class="form-validate form-horizontal " id="register_form" method="get" action="" runat="server">
-                                        <div class="form-group ">
-                                            <label for="cliente" class="control-label col-lg-2">Cliente<span class="required">*</span></label>
-                                            <div class="col-lg-10">
-                                                <asp:TextBox class="form-control" ID="txtCliente" name="cliente" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
+
+                                    <form class="form-validate form-horizontal " id="register_form" runat="server">
                                         <div class="form-group">
-                                            <label for="address" class="control-label col-lg-2">Evento <span class="required">*</span></label>
+                                            <label for="address" class="control-label col-lg-2">Tipo de evento <span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <asp:DropDownList ID="ddlEvento" class="form-control" runat="server">
-                                                    <asp:ListItem Value="1">Cumpleaños</asp:ListItem>
-                                                    <asp:ListItem Value="2">Casamiento</asp:ListItem>
-                                                    <asp:ListItem Value="3">Viaje</asp:ListItem>
-                                                    <asp:ListItem Value="4">Otro</asp:ListItem>
-                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddl_tipoevento" class="form-control" runat="server"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="form-group ">
                                             <label for="descripcion" class="control-label col-lg-2">Descripción<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <asp:TextBox ID="txtDescripcion" class="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_descripcion" class="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <!-- Esto no se como pasarlo por ahora -->
+
                                         <div class="form-group">
-                                            <label for="fecha_inicio" class="control-label col-lg-2">Fecha de Inicio<span class="required">*</span></label>
-                                            <div class='input-group date col-lg-4' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
+                                            <label class="control-label col-lg-2">Fecha de Inicio<span class="required">*</span></label>
+                                            <div class="input-group registration-date-time col-lg-10">
+                                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                                                <asp:TextBox ID="txt_dateinicio" runat="server" class="form-control" Type="date"></asp:TextBox>
+                                                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
+                                                <asp:TextBox ID="txt_timeinicio" runat="server" class="form-control"  type="time"></asp:TextBox>
                                             </div>
-                                            <label for="fecha_fin" class="control-label col-lg-2">Fecha de Fin<span class="required">*</span></label>
-                                            <div class='input-group date col-lg-4' id='datetimepicker2'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
+                                            <label class="control-label col-lg-2">Fecha de Fin<span class="required">*</span></label>
+                                            <div class="input-group registration-date-time col-lg-10">
+                                                <span class="input-group-addon" id="basic-addon3"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                                                <asp:TextBox ID="txt_datafin" runat="server" class="form-control" Type="date"></asp:TextBox>
+                                                <span class="input-group-addon" id="basic-addon4"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
+                                                <asp:TextBox ID="txt_timefin" runat="server" class="form-control"  type="time"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <!-- /Esto no se como pasarlo por ahora -->
+
                                         <div class="form-group">
                                             <div class="col-lg-offset-2 col-lg-10">
                                                 <asp:Button ID="btnGuardar" class="btn btn-primary" runat="server" Text="Guardar" />
@@ -114,5 +116,58 @@
             </section>
         </section>
     </section>
+    <script type="text/javascript">
+        $("#datetime").datetimepicker({
+            format: 'yyyy-mm-dd hh:ii',
+            autoclose: true,
+            todayBtn: true
+        });
+    </script>
+    <script src="js/allscripts.js"></script>
+    <script>
+        //knob
+        $(function () {
+            $(".knob").knob({
+                'draw': function () {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        //carousel
+        $(document).ready(function () {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+        /* ---------- Map ---------- */
+        $(function () {
+            $('#map').vectorMap({
+                map: 'world_mill_en',
+                series: {
+                    regions: [{
+                        values: gdpData,
+                        scale: ['#000', '#000'],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
+                backgroundColor: '#eef3f7',
+                onLabelShow: function (e, el, code) {
+                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
