@@ -54,9 +54,8 @@
                     <div class="col-lg-12">
                         <h3 class="page-header"><i class="fa fa-files-o"></i>Crear Evento</h3>
                         <ol class="breadcrumb">
-                            <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                            <li><i class="icon_document_alt"></i>Crear</li>
-                            <li><i class="fa fa-files-o"></i>Evento</li>
+                            <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
+                            <li><i class="fa fa-files-o"></i><a href="CrearEvento.aspx">CrearEvento</a></li>
                         </ol>
                     </div>
                 </div>
@@ -124,13 +123,6 @@
             </section>
         </section>
     </section>
-    <script type="text/javascript">
-        $("#datetime").datetimepicker({
-            format: 'yyyy-mm-dd hh:ii',
-            autoclose: true,
-            todayBtn: true
-        });
-    </script>
     <script src="js/allscripts.js"></script>
     <script>
         //knob

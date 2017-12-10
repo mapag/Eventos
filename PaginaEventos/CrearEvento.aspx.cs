@@ -71,7 +71,7 @@ public partial class CrearEvento : System.Web.UI.Page
     protected void GenerarEvento()
     {
         string id = ad.ObtenerValor("SELECT (MAX(codigo)+1) AS codigo FROM eventos");
-        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + txt_dateinicio.Text + " " + txt_timeinicio.Text + "', '" + txt_datafin.Text + " " + txt_timefin.Text + "')" ;
+        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin, estado) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + txt_dateinicio.Text + " " + txt_timeinicio.Text + "', '" + txt_datafin.Text + " " + txt_timefin.Text + "', 0)" ;
         string consultaSQL2 = "insert into evento_por_cuenta (evento, cuenta, perfil, estado, confirmacion) values (" + id + ", " + Session["CodigoCuenta"] + ", 1, 0, 1)";
         ad.EjecutarConsulta(consultaSQL);
         ad.EjecutarConsulta(consultaSQL2);

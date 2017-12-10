@@ -39,7 +39,7 @@
 
 </head>
 <body>
-    <section id="Section1" class="" runat="server">
+    <form id="container" class="" runat="server">
 
         <!--CABECERA start-->
         <asp:Label ID="lbl_cabecera" runat="server" Text=""></asp:Label>
@@ -53,14 +53,13 @@
 
 
         <!--CONTENIDO start -->
-        <section id="main-content" class="wrapper">
+        <section id="main-content">
             <section class="wrapper">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>Dashboard</h3>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Inicio</h3>
                         <ol class="breadcrumb">
-                            <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                            <li><i class="fa fa-laptop"></i>Dashboard</li>
+                            <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
                         </ol>
                     </div>
                 </div>
@@ -69,7 +68,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box blue-bg">
                             <i class="fa fa-calendar"></i>
-                            <div class="count">32</div>
+                            <div class="count"><asp:Label ID="lbl_EventosActivos" runat="server" Text="30"></asp:Label></div>
                             <div class="title">Eventos Activos</div>
                         </div>
                     </div>
@@ -77,7 +76,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box dark-bg">
                             <i class="fa fa-calendar"></i>
-                            <div class="count">50</div>
+                            <div class="count"><asp:Label ID="lbl_EventosTotales" runat="server" Text="50"></asp:Label></div>
                             <div class="title">Eventos Totales</div>
                         </div>
                     </div>
@@ -85,7 +84,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box brown-bg">
                             <i class="fa fa-user"></i>
-                            <div class="count">342</div>
+                            <div class="count"><asp:Label ID="lbl_ClientesActivos" runat="server" Text="70"></asp:Label></div>
                             <div class="title">Clientes Activos</div>
                         </div>
                     </div>
@@ -93,84 +92,37 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box green-bg">
                             <i class="fa fa-user"></i>
-                            <div class="count">642</div>
+                            <div class="count"><asp:Label ID="lbl_ClientesTotales" runat="server" Text="90"></asp:Label></div>
                             <div class="title">Clientes Totales</div>
                         </div>
                     </div>
                 </div>
-
-                <a href="CrearEvento.aspx">
-                    <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;"><i class="fa fa-plus" style="padding-right: 10px;"></i>Crear Evento</button></a>
-                <!-- EVENTOS ACTIVOS -->
-                <div class="row" runat="server">
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2><i class="fa fa-users"></i><strong>Eventos Activos</strong></h2>
-                                <div class="panel-actions">
-                                    <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                                    <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                                    <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table bootstrap-datatable countries">
-                                    <thead>
-                                        <tr>
-                                            <!-- <th></th> -->
-                                            <th>Evento</th>
-                                            <th>Cliente</th>
-                                            <th>Lugar</th>
-                                            <th>
-                                                <!-- <th>Presupuesto</th> -->
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Fiesta de 15</td>
-                                            <td>Juan Perez</td>
-                                            <td>CABA</td>
-                                            <td><a href="adminevent.html">
-                                                <button class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 10px;"></i>Administrar</button></a></td>
-                                            <!-- <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
-                          </div>
-                        </div>
-                        <span class="sr-only">73%</span>
-                      </td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>Casamiento</td>
-                                            <td>Alejandra Romez</td>
-                                            <td>Ing. Maschwitz</td>
-                                            <td><a href="adminevent.html">
-                                                <button class="btn btn-primary"><i class="fa fa-plus" style="padding-right: 10px;"></i>Administrar</button></a></td>
-                                            <!-- <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
-                          </div>
-                        </div>
-                        <span class="sr-only">57%</span>
-                      </td> -->
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+            </section>
+            <section class="wrapper">
+                <div>
+                    <asp:Button ID="btn_CrearEvento" class="btn btn-primary col-lg-3" runat="server" style="margin-bottom: 30px;" Text="CrearEvento" OnClick="btn_CrearEvento_Click"/>
                     </div>
-                </div>
+                <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="BorrarFila" OnSelectedIndexChanged="EditarFila">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:CommandField ButtonType="Button" ShowSelectButton="true" ControlStyle-CssClass="btn btn-info"/>
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger"/>
+                    </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#000000" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                </asp:GridView>
             </section>
         </section>
         <!--CONTENIDO end -->
-
-
-    </section>
+    </form>
     <!-- container section start -->
 
     <!-- javascripts -->
