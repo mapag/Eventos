@@ -20,6 +20,12 @@ document.write('\
                             <li><a class="" href="Inicio.aspx">Estadisticas</a></li>\
                         </ul>\
                     </li>\
+                    <li>\
+                        <a class="" href="MiPerfil.aspx">\
+                            <i class="fa fa-user"></i>\
+                            <span>Mi Perfil</span>\
+                        </a>\
+                    </li>\
                 </ul>\
             </div>\
         </aside>\
