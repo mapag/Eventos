@@ -1,6 +1,6 @@
 document.write('\
 <aside>\
-            <div id="sidebar" class="nav-collapse ">\
+            <div id="sidebar" class="nav-collapse">\
                 <!-- sidebar menu start-->\
                 <ul class="sidebar-menu">\
                     <li>\
@@ -19,6 +19,12 @@ document.write('\
                             <li class=""><a class="" href="Invitados.aspx">Crear invitado</a></li>\
                             <li><a class="" href="Inicio.aspx">Estadisticas</a></li>\
                         </ul>\
+                    </li>\
+                    <li>\
+                        <a class="" href="MiPerfil.aspx">\
+                            <i class="fa fa-user"></i>\
+                            <span>Mi Perfil</span>\
+                        </a>\
                     </li>\
                 </ul>\
             </div>\

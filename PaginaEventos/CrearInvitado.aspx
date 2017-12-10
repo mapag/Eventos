@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Miperfil.aspx.cs" Inherits="Miperfil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CrearInvitado.aspx.cs" Inherits="CrearInvitado" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/fullcalendar.css" />
     <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/stylePerfil.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
@@ -55,55 +54,7 @@
 
         <!--CONTENIDO start -->
         <section id="main-content" class="wrapper">
-            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-            <div class="container contenedor">
-                <div class="fb-profile">
-                    <img align="left" class="fb-image-lg" src="img/portada.jpg" alt="Cambiar foto de portada" />
-                    <img align="left" class="fb-image-profile thumbnail" src="img/profile-picture.jpg" alt="Cambiar foto de perfil" />
-                    <div class="fb-profile-text">
-                        <h1>Mateo Pagniez</h1>
-                        <p>Aca iria una frase o algo</p>
-                    </div>
-                </div>
-                <div class="info-perfil">
-                    <div id="profile" class="tab-pane">
-                        <section class="panel">
-                            <div class="bio-graph-heading">
-                                <h1>Mi Cuenta</h1>
-                            </div>
-                            <div class="panel-body bio-graph-info">
-                                <div class="row">
-                                    <div class="bio-row">
-                                        <p><span>Nombres </span>: Mateo</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Apellidos </span>: Pagniez</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Cumpleaños </span>: 25 Marzo 1998</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>País </span>: Argentina</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Email </span>: mateo@pagniez.com</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Teléfono </span>: 15 6052 8202</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="row">
-                            </div>
-                        </section>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /container -->
+            <asp:Label ID="Label1" runat="server" Text="aca va el codigo"></asp:Label>
         </section>
         <!--CONTENIDO end -->
 
