@@ -12,6 +12,7 @@ html, body
 
 .contenedor{
     align-content: center;
+    margin-left: auto;
 }
 
 .fb-profile img.fb-image-lg{
