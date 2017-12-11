@@ -42,7 +42,7 @@ public partial class Inicio : System.Web.UI.Page
     protected void EditarFila(object sender, EventArgs e)
     {
         Session["CodigoEvento"] = grd_eventos.Rows[grd_eventos.SelectedIndex].Cells[2].Text;
-        Response.Redirect("Inicio.aspx");
+        Response.Redirect("GestionEvento.aspx");
     }
     protected void btn_CrearEvento_Click(object sender, EventArgs e)
     {
