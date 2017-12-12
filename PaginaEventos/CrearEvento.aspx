@@ -24,8 +24,6 @@
     <!-- full calendar css-->
     <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
     <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
-    <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
     <!-- owl carousel -->
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
     <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
@@ -36,6 +34,7 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+    <link href="css/fullcalendar.css" rel="stylesheet" />
 </head>
 <body>
     <section id="container" class="" runat="server">
@@ -69,7 +68,7 @@
                             <div class="panel-body">
                                 <div class="form">
 
-                                    <form class="form-validate form-horizontal " id="register_form" runat="server">
+                                    <form class="form-validate form-horizontal" id="register_form" runat="server">
                                         <div class="form-group">
                                             <label for="address" class="control-label col-lg-2">Tipo de evento <span class="required">*</span></label>
                                             <div class="col-lg-10">
@@ -86,7 +85,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-lg-2">Fecha de Inicio<span class="required">*</span></label>
                                             <div class="input-group registration-date-time col-lg-10">
-                                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar fc" aria-hidden="true"></span></span>
                                                 <asp:TextBox ID="txt_dateinicio" runat="server" class="form-control" Type="date"></asp:TextBox>
                                                 <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
                                                 <asp:TextBox ID="txt_timeinicio" runat="server" class="form-control"  type="time"></asp:TextBox>

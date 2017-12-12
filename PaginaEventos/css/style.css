@@ -504,7 +504,7 @@ table tr th { color: #688a7e;}
 
     width: 180px;
 
-    height: 50%;
+    height: 100%;
 
     position: fixed;
 
@@ -592,8 +592,6 @@ ul.sidebar-menu li ul.sub li a {
 
     height: 35px;
 
-    -webkit-transition: all 0.3s ease;
-
     -moz-transition: all 0.3s ease;
 
     -o-transition: all 0.3s ease;
@@ -613,8 +611,6 @@ ul.sidebar-menu li ul.sub li a {
 ul.sidebar-menu li ul.sub li a:hover, ul.sidebar-menu li ul.sub li.active a {
 
     color: #fff;
-
-    -webkit-transition: all 0.3s ease;
 
     -moz-transition: all 0.3s ease;
 
@@ -4254,7 +4250,7 @@ div[data-role="editor-toolbar"] {
 
 /*Creative carousel model*/
 
-
+/*
 
 .flat-carousal {
 
@@ -4452,7 +4448,7 @@ ul.ft-link li a i {
 
 }
 
-
+    */
 
 /*product post*/
 
@@ -7836,7 +7832,7 @@ ul.amounts li {
 
 /*carousel*/
 
-
+/*
 
 .carousel-indicators li {
 
@@ -7962,7 +7958,7 @@ ul.amounts li {
 
 }
 
-
+*/
 
 /*gritter*/
 
