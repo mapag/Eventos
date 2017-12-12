@@ -81,102 +81,30 @@
                 </asp:GridView>
             </section>
 
-            <section class="wrapper">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <h1>Mesa:
-                                        <asp:TextBox ID="NombreMesa" runat="server"></asp:TextBox></h1>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p>Lista de invitados:</p>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <asp:ListBox runat="server">
-                                            <asp:ListItem Value="4">LAUTARO</asp:ListItem>
-                                            <asp:ListItem Value="7">MATEO</asp:ListItem>
-                                            <asp:ListItem Value="3">JUAN</asp:ListItem>
-                                        </asp:ListBox>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p style="display: inline;">Agregar: </p>
-                                        <asp:TextBox ID="Invitado" runat="server"></asp:TextBox>
-                                        <asp:Button ID="ConfInv" runat="server" Text="+" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <h1>Mesa:
-                                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></h1>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p>Lista de invitados:</p>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <asp:ListBox runat="server">
-                                            <asp:ListItem Value="4">JUANA</asp:ListItem>
-                                            <asp:ListItem Value="7">AGUSTINA</asp:ListItem>
-                                            <asp:ListItem Value="3">AUGUSTO</asp:ListItem>
-                                        </asp:ListBox>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p style="display: inline;">Agregar: </p>
-                                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                                        <asp:Button ID="Button1" runat="server" Text="+" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <h1>Mesa:
-                                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></h1>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p>Lista de invitados:</p>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <asp:ListBox runat="server">
-                                            <asp:ListItem Value="4">JUANA</asp:ListItem>
-                                            <asp:ListItem Value="7">AGUSTINA</asp:ListItem>
-                                            <asp:ListItem Value="3">AUGUSTO</asp:ListItem>
-                                        </asp:ListBox>
-                                    </div>
-                                    <div class="row" style="padding-bottom: 40px;">
-                                        <p style="display: inline;">Agregar: </p>
-                                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-                                        <asp:Button ID="Button2" runat="server" Text="+" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <!-- /.carousel -->
+            <section id="carousel " class="wrapper bg-carousel">
+                <table class="tabla-car">
+                    <tr>
+                        <th> </th>
+                        <th><h1>MESA</h1></th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+                        <td><a class="izquierda flecha" role="button">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a></td>
+                        <td>ASD</td>
+                        <td><a class="derecha flecha" role="button">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td>ASD</td>
+                        <td></td>
+                    </tr>
+                </table>
             </section>
             <!--CONTENIDO end -->
         </section>
