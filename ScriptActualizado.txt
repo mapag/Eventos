@@ -1,49 +1,21 @@
 USE [Eventos]
 GO
-/****** Object:  Table [dbo].[cuentas]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[vehiculos]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[cuentas](
-	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[contrasena] [varchar](50) NULL,
-	[cod_ingreso] [varchar](20) NULL,
-	[nombre] [varchar](50) NULL,
-	[apellido] [varchar](50) NULL,
-	[mail] [varchar](50) NULL,
-	[telefono] [varchar](50) NULL,
-	[imagen] [varchar](200) NULL,
- CONSTRAINT [PK_cuentas] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[cuentas] ON
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (1, N'123', N'aaaa', N'Lautaro', N'Rodriguez', N'lautarohrodriguez@gmail.com', N'15151515', N'img/avatar1_small.jpg')
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (4, N'1234', NULL, N'Papafrita', N'Salada', N'papa@salada.com', NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (5, N'123', NULL, N'asdadawd', N'awdawd', N'papa2@salada.com', NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (7, N'123', NULL, N'Mateo', N'Pagniez', N'mateo_pag@gmail.com', NULL, NULL)
-SET IDENTITY_INSERT [dbo].[cuentas] OFF
-/****** Object:  Table [dbo].[locales]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[locales](
+CREATE TABLE [dbo].[vehiculos](
 	[codigo] [int] IDENTITY(1,1) NOT NULL,
 	[evento] [int] NULL,
-	[descripcion] [varchar](200) NULL,
-	[direccion] [int] NULL,
+	[motivo] [varchar](200) NULL,
+	[cantidad_asientos] [int] NULL,
+	[direccion_partida] [int] NULL,
+	[direccion_arrivo] [int] NULL,
 	[cuenta_responsable] [int] NULL,
- CONSTRAINT [PK_locales] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_vehiculos] PRIMARY KEY CLUSTERED 
 (
 	[codigo] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -51,301 +23,7 @@ CREATE TABLE [dbo].[locales](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[perfiles]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[perfiles](
-	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[descripcion] [varchar](100) NULL,
- CONSTRAINT [PK_perfiles] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[perfiles] ON
-INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (1, N'Creador')
-INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (2, N'Administrador')
-INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (3, N'Invitado')
-SET IDENTITY_INSERT [dbo].[perfiles] OFF
-/****** Object:  Table [dbo].[paises]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[paises](
-	[codigo] [int] NOT NULL,
-	[nombre] [varchar](50) NULL,
- CONSTRAINT [PK_paises] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (1, N'Australia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (2, N'Austria')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (3, N'Azerbaiyán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (4, N'Anguilla')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (5, N'Argentina')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (6, N'Armenia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (7, N'Bielorrusia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (8, N'Belice')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (9, N'Bélgica')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (10, N'Bermudas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (11, N'Bulgaria')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (12, N'Brasil')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (13, N'Reino Unido')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (14, N'Hungría')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (15, N'Vietnam')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (16, N'Haiti')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (17, N'Guadalupe')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (18, N'Alemania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (19, N'Países Bajos, Holanda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (20, N'Grecia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (21, N'Georgia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (22, N'Dinamarca')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (23, N'Egipto')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (24, N'Israel')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (25, N'India')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (26, N'Irán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (27, N'Irlanda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (28, N'España')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (29, N'Italia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (30, N'Kazajstán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (31, N'Camerún')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (32, N'Canadá')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (33, N'Chipre')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (34, N'Kirguistán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (35, N'China')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (36, N'Costa Rica')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (37, N'Kuwait')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (38, N'Letonia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (39, N'Libia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (40, N'Lituania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (41, N'Luxemburgo')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (42, N'México')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (43, N'Moldavia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (44, N'Mónaco')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (45, N'Nueva Zelanda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (46, N'Noruega')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (47, N'Polonia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (48, N'Portugal')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (49, N'Reunión')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (50, N'Rusia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (51, N'El Salvador')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (52, N'Eslovaquia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (53, N'Eslovenia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (54, N'Surinam')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (55, N'Estados Unidos')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (56, N'Tadjikistan')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (57, N'Turkmenistan')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (58, N'Islas Turcas y Caicos')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (59, N'Turquía')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (60, N'Uganda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (61, N'Uzbekistán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (62, N'Ucrania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (63, N'Finlandia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (64, N'Francia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (65, N'República Checa')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (66, N'Suiza')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (67, N'Suecia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (68, N'Estonia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (69, N'Corea del Sur')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (70, N'Japón')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (71, N'Croacia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (72, N'Rumanía')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (73, N'Hong Kong')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (74, N'Indonesia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (75, N'Jordania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (76, N'Malasia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (77, N'Singapur')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (78, N'Taiwan')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (79, N'Bosnia y Herzegovina')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (80, N'Bahamas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (81, N'Chile')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (82, N'Colombia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (83, N'Islandia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (84, N'Corea del Norte')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (85, N'Macedonia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (86, N'Malta')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (87, N'Pakistán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (88, N'Papúa-Nueva Guinea')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (89, N'Perú')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (90, N'Filipinas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (91, N'Arabia Saudita')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (92, N'Tailandia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (93, N'Emiratos árabes Unidos')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (94, N'Groenlandia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (95, N'Venezuela')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (96, N'Zimbabwe')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (97, N'Kenia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (98, N'Algeria')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (99, N'Líbano')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (100, N'Botsuana')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (101, N'Tanzania')
-GO
-print 'Processed 100 total records'
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (102, N'Namibia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (103, N'Ecuador')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (104, N'Marruecos')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (105, N'Ghana')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (106, N'Siria')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (107, N'Nepal')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (108, N'Mauritania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (109, N'Seychelles')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (110, N'Paraguay')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (111, N'Uruguay')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (112, N'Congo (Brazzaville)')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (113, N'Cuba')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (114, N'Albania')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (115, N'Nigeria')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (116, N'Zambia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (117, N'Mozambique')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (119, N'Angola')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (120, N'Sri Lanka')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (121, N'Etiopía')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (122, N'Túnez')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (123, N'Bolivia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (124, N'Panamá')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (125, N'Malawi')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (126, N'Liechtenstein')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (127, N'Bahrein')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (128, N'Barbados')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (130, N'Chad')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (131, N'Man, Isla de')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (132, N'Jamaica')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (133, N'Malí')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (134, N'Madagascar')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (135, N'Senegal')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (136, N'Togo')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (137, N'Honduras')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (138, N'República Dominicana')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (139, N'Mongolia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (140, N'Irak')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (141, N'Sudáfrica')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (142, N'Aruba')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (143, N'Gibraltar')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (144, N'Afganistán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (145, N'Andorra')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (147, N'Antigua y Barbuda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (149, N'Bangladesh')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (151, N'Benín')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (152, N'Bután')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (154, N'Islas Virgenes Británicas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (155, N'Brunéi')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (156, N'Burkina Faso')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (157, N'Burundi')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (158, N'Camboya')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (159, N'Cabo Verde')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (164, N'Comores')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (165, N'Congo (Kinshasa)')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (166, N'Cook, Islas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (168, N'Costa de Marfil')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (169, N'Djibouti, Yibuti')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (171, N'Timor Oriental')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (172, N'Guinea Ecuatorial')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (173, N'Eritrea')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (175, N'Feroe, Islas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (176, N'Fiyi')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (178, N'Polinesia Francesa')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (180, N'Gabón')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (181, N'Gambia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (184, N'Granada')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (185, N'Guatemala')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (186, N'Guernsey')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (187, N'Guinea')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (188, N'Guinea-Bissau')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (189, N'Guyana')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (193, N'Jersey')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (195, N'Kiribati')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (196, N'Laos')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (197, N'Lesotho')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (198, N'Liberia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (200, N'Maldivas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (201, N'Martinica')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (202, N'Mauricio')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (205, N'Myanmar')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (206, N'Nauru')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (207, N'Antillas Holandesas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (208, N'Nueva Caledonia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (209, N'Nicaragua')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (210, N'Níger')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (212, N'Norfolk Island')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (213, N'Omán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (215, N'Isla Pitcairn')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (216, N'Qatar')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (217, N'Ruanda')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (218, N'Santa Elena')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (219, N'San Cristobal y Nevis')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (220, N'Santa Lucía')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (221, N'San Pedro y Miquelón')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (222, N'San Vincente y Granadinas')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (223, N'Samoa')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (224, N'San Marino')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (225, N'San Tomé y Príncipe')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (226, N'Serbia y Montenegro')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (227, N'Sierra Leona')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (228, N'Islas Salomón')
-GO
-print 'Processed 200 total records'
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (229, N'Somalia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (232, N'Sudán')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (234, N'Swazilandia')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (235, N'Tokelau')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (236, N'Tonga')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (237, N'Trinidad y Tobago')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (239, N'Tuvalu')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (240, N'Vanuatu')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (241, N'Wallis y Futuna')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (242, N'Sáhara Occidental')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (243, N'Yemen')
-INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (246, N'Puerto Rico')
-/****** Object:  Table [dbo].[modulos]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[modulos](
-	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[nombre] [varchar](50) NULL,
-	[pagina] [varchar](200) NULL,
- CONSTRAINT [PK_modulos] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[asientos]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[asientos](
-	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[origen] [int] NULL,
-	[codigo_origen] [int] NULL,
-	[cuenta] [int] NULL,
- CONSTRAINT [PK_asientos] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tipos_eventos]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[tipos_eventos]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -367,7 +45,7 @@ SET IDENTITY_INSERT [dbo].[tipos_eventos] ON
 INSERT [dbo].[tipos_eventos] ([codigo], [descripcion]) VALUES (6, N'Ceremonia/Fiesta/Combite')
 INSERT [dbo].[tipos_eventos] ([codigo], [descripcion]) VALUES (7, N'Viaje')
 SET IDENTITY_INSERT [dbo].[tipos_eventos] OFF
-/****** Object:  Table [dbo].[provincias]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[provincias]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2421,7 +2099,7 @@ INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2194, N'Gyeongsan
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2195, N'Gyeongsangnam', 69)
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2196, N'Jeju', 69)
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2201, N'Delhi', 25)
-/****** Object:  Table [dbo].[permisos]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[permisos]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2438,22 +2116,332 @@ CREATE TABLE [dbo].[permisos](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[mesas]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[perfiles]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[perfiles](
+	[codigo] [int] IDENTITY(1,1) NOT NULL,
+	[descripcion] [varchar](100) NULL,
+ CONSTRAINT [PK_perfiles] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[perfiles] ON
+INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (1, N'Creador')
+INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (2, N'Administrador')
+INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (3, N'Invitado')
+SET IDENTITY_INSERT [dbo].[perfiles] OFF
+/****** Object:  Table [dbo].[paises]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[paises](
+	[codigo] [int] NOT NULL,
+	[nombre] [varchar](50) NULL,
+ CONSTRAINT [PK_paises] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (1, N'Australia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (2, N'Austria')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (3, N'Azerbaiyán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (4, N'Anguilla')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (5, N'Argentina')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (6, N'Armenia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (7, N'Bielorrusia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (8, N'Belice')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (9, N'Bélgica')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (10, N'Bermudas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (11, N'Bulgaria')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (12, N'Brasil')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (13, N'Reino Unido')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (14, N'Hungría')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (15, N'Vietnam')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (16, N'Haiti')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (17, N'Guadalupe')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (18, N'Alemania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (19, N'Países Bajos, Holanda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (20, N'Grecia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (21, N'Georgia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (22, N'Dinamarca')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (23, N'Egipto')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (24, N'Israel')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (25, N'India')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (26, N'Irán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (27, N'Irlanda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (28, N'España')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (29, N'Italia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (30, N'Kazajstán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (31, N'Camerún')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (32, N'Canadá')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (33, N'Chipre')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (34, N'Kirguistán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (35, N'China')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (36, N'Costa Rica')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (37, N'Kuwait')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (38, N'Letonia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (39, N'Libia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (40, N'Lituania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (41, N'Luxemburgo')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (42, N'México')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (43, N'Moldavia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (44, N'Mónaco')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (45, N'Nueva Zelanda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (46, N'Noruega')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (47, N'Polonia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (48, N'Portugal')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (49, N'Reunión')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (50, N'Rusia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (51, N'El Salvador')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (52, N'Eslovaquia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (53, N'Eslovenia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (54, N'Surinam')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (55, N'Estados Unidos')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (56, N'Tadjikistan')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (57, N'Turkmenistan')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (58, N'Islas Turcas y Caicos')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (59, N'Turquía')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (60, N'Uganda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (61, N'Uzbekistán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (62, N'Ucrania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (63, N'Finlandia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (64, N'Francia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (65, N'República Checa')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (66, N'Suiza')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (67, N'Suecia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (68, N'Estonia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (69, N'Corea del Sur')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (70, N'Japón')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (71, N'Croacia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (72, N'Rumanía')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (73, N'Hong Kong')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (74, N'Indonesia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (75, N'Jordania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (76, N'Malasia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (77, N'Singapur')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (78, N'Taiwan')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (79, N'Bosnia y Herzegovina')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (80, N'Bahamas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (81, N'Chile')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (82, N'Colombia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (83, N'Islandia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (84, N'Corea del Norte')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (85, N'Macedonia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (86, N'Malta')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (87, N'Pakistán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (88, N'Papúa-Nueva Guinea')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (89, N'Perú')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (90, N'Filipinas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (91, N'Arabia Saudita')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (92, N'Tailandia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (93, N'Emiratos árabes Unidos')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (94, N'Groenlandia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (95, N'Venezuela')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (96, N'Zimbabwe')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (97, N'Kenia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (98, N'Algeria')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (99, N'Líbano')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (100, N'Botsuana')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (101, N'Tanzania')
+GO
+print 'Processed 100 total records'
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (102, N'Namibia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (103, N'Ecuador')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (104, N'Marruecos')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (105, N'Ghana')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (106, N'Siria')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (107, N'Nepal')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (108, N'Mauritania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (109, N'Seychelles')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (110, N'Paraguay')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (111, N'Uruguay')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (112, N'Congo (Brazzaville)')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (113, N'Cuba')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (114, N'Albania')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (115, N'Nigeria')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (116, N'Zambia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (117, N'Mozambique')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (119, N'Angola')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (120, N'Sri Lanka')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (121, N'Etiopía')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (122, N'Túnez')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (123, N'Bolivia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (124, N'Panamá')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (125, N'Malawi')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (126, N'Liechtenstein')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (127, N'Bahrein')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (128, N'Barbados')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (130, N'Chad')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (131, N'Man, Isla de')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (132, N'Jamaica')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (133, N'Malí')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (134, N'Madagascar')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (135, N'Senegal')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (136, N'Togo')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (137, N'Honduras')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (138, N'República Dominicana')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (139, N'Mongolia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (140, N'Irak')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (141, N'Sudáfrica')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (142, N'Aruba')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (143, N'Gibraltar')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (144, N'Afganistán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (145, N'Andorra')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (147, N'Antigua y Barbuda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (149, N'Bangladesh')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (151, N'Benín')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (152, N'Bután')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (154, N'Islas Virgenes Británicas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (155, N'Brunéi')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (156, N'Burkina Faso')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (157, N'Burundi')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (158, N'Camboya')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (159, N'Cabo Verde')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (164, N'Comores')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (165, N'Congo (Kinshasa)')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (166, N'Cook, Islas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (168, N'Costa de Marfil')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (169, N'Djibouti, Yibuti')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (171, N'Timor Oriental')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (172, N'Guinea Ecuatorial')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (173, N'Eritrea')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (175, N'Feroe, Islas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (176, N'Fiyi')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (178, N'Polinesia Francesa')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (180, N'Gabón')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (181, N'Gambia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (184, N'Granada')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (185, N'Guatemala')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (186, N'Guernsey')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (187, N'Guinea')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (188, N'Guinea-Bissau')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (189, N'Guyana')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (193, N'Jersey')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (195, N'Kiribati')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (196, N'Laos')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (197, N'Lesotho')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (198, N'Liberia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (200, N'Maldivas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (201, N'Martinica')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (202, N'Mauricio')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (205, N'Myanmar')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (206, N'Nauru')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (207, N'Antillas Holandesas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (208, N'Nueva Caledonia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (209, N'Nicaragua')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (210, N'Níger')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (212, N'Norfolk Island')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (213, N'Omán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (215, N'Isla Pitcairn')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (216, N'Qatar')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (217, N'Ruanda')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (218, N'Santa Elena')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (219, N'San Cristobal y Nevis')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (220, N'Santa Lucía')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (221, N'San Pedro y Miquelón')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (222, N'San Vincente y Granadinas')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (223, N'Samoa')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (224, N'San Marino')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (225, N'San Tomé y Príncipe')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (226, N'Serbia y Montenegro')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (227, N'Sierra Leona')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (228, N'Islas Salomón')
+GO
+print 'Processed 200 total records'
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (229, N'Somalia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (232, N'Sudán')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (234, N'Swazilandia')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (235, N'Tokelau')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (236, N'Tonga')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (237, N'Trinidad y Tobago')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (239, N'Tuvalu')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (240, N'Vanuatu')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (241, N'Wallis y Futuna')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (242, N'Sáhara Occidental')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (243, N'Yemen')
+INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (246, N'Puerto Rico')
+/****** Object:  Table [dbo].[modulos]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[modulos](
+	[codigo] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](50) NULL,
+	[pagina] [varchar](200) NULL,
+ CONSTRAINT [PK_modulos] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mesas]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[mesas](
 	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[local] [int] NULL,
-	[cantidad_asientos] [int] NULL,
+	[nombre] [varchar](50) NULL,
+	[evento] [int] NULL,
  CONSTRAINT [PK_mesas] PRIMARY KEY CLUSTERED 
 (
 	[codigo] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[eventos]    Script Date: 12/10/2017 16:46:57 ******/
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[mesas] ON
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (2, N'mesa 1', 1)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (3, N'Mesa1', 6)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (4, N'Mesa2', 6)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (5, N'Mesa3', 6)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (6, N'Mesita1', 6)
+SET IDENTITY_INSERT [dbo].[mesas] OFF
+/****** Object:  Table [dbo].[locales]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[locales](
+	[codigo] [int] IDENTITY(1,1) NOT NULL,
+	[evento] [int] NULL,
+	[descripcion] [varchar](200) NULL,
+	[direccion] [int] NULL,
+	[cuenta_responsable] [int] NULL,
+ CONSTRAINT [PK_locales] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[eventos]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2482,27 +2470,7 @@ INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estad
 INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (5, N'', 6, CAST(0x0000000000000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 1)
 INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (6, N'1r evento creado desde la pagina CrearEvento.', 6, CAST(0x0000A80A00000000 AS DateTime), CAST(0x0000BA9600000000 AS DateTime), 0)
 INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (7, N'Viaje Al centro de la tierra', 7, CAST(0x0000A88200000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 0)
-/****** Object:  Table [dbo].[ciudades]    Script Date: 12/10/2017 16:46:57 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[ciudades](
-	[codigo] [int] NOT NULL,
-	[nombre] [varchar](50) NULL,
-	[provincia] [int] NULL,
-	[pais] [int] NULL,
- CONSTRAINT [PK_ciudades] PRIMARY KEY CLUSTERED 
-(
-	[codigo] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[evento_por_cuenta]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[evento_por_cuenta]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2524,8 +2492,10 @@ INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confi
 INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (4, 1, 1, 0, 1)
 INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (5, 1, 1, 0, 1)
 INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 1, 1, 0, 1)
+INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 4, 3, 0, 1)
+INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 5, 3, 0, 1)
 INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (7, 1, 1, 0, 1)
-/****** Object:  Table [dbo].[direcciones]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[direcciones]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2547,22 +2517,23 @@ CREATE TABLE [dbo].[direcciones](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[vehiculos]    Script Date: 12/10/2017 16:46:57 ******/
+/****** Object:  Table [dbo].[cuentas]    Script Date: 12/12/2017 22:09:15 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[vehiculos](
+CREATE TABLE [dbo].[cuentas](
 	[codigo] [int] IDENTITY(1,1) NOT NULL,
-	[evento] [int] NULL,
-	[motivo] [varchar](200) NULL,
-	[cantidad_asientos] [int] NULL,
-	[direccion_partida] [int] NULL,
-	[direccion_arrivo] [int] NULL,
-	[cuenta_responsable] [int] NULL,
- CONSTRAINT [PK_vehiculos] PRIMARY KEY CLUSTERED 
+	[contrasena] [varchar](50) NULL,
+	[cod_ingreso] [varchar](20) NULL,
+	[nombre] [varchar](50) NULL,
+	[apellido] [varchar](50) NULL,
+	[mail] [varchar](50) NULL,
+	[telefono] [varchar](50) NULL,
+	[imagen] [varchar](200) NULL,
+ CONSTRAINT [PK_cuentas] PRIMARY KEY CLUSTERED 
 (
 	[codigo] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -2570,93 +2541,62 @@ CREATE TABLE [dbo].[vehiculos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  ForeignKey [FK_provincias_paises]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[provincias]  WITH CHECK ADD  CONSTRAINT [FK_provincias_paises] FOREIGN KEY([pais])
-REFERENCES [dbo].[paises] ([codigo])
+SET IDENTITY_INSERT [dbo].[cuentas] ON
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (1, N'123', N'aaaa', N'Lautaro', N'Rodriguez', N'lautarohrodriguez@gmail.com', N'15151515', N'img/avatar1_small.jpg')
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (4, N'1234', NULL, N'Papafrita', N'Salada', N'papa@salada.com', NULL, NULL)
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (5, N'123', NULL, N'asdadawd', N'awdawd', N'papa2@salada.com', NULL, NULL)
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen]) VALUES (7, N'123', NULL, N'Mateo', N'Pagniez', N'mateo_pag@gmail.com', NULL, NULL)
+SET IDENTITY_INSERT [dbo].[cuentas] OFF
+/****** Object:  Table [dbo].[cuenta_por_mesa]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
 GO
-ALTER TABLE [dbo].[provincias] CHECK CONSTRAINT [FK_provincias_paises]
+SET QUOTED_IDENTIFIER ON
 GO
-/****** Object:  ForeignKey [FK_permisos_modulos]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[permisos]  WITH CHECK ADD  CONSTRAINT [FK_permisos_modulos] FOREIGN KEY([modulo])
-REFERENCES [dbo].[modulos] ([codigo])
+CREATE TABLE [dbo].[cuenta_por_mesa](
+	[cuenta] [int] NOT NULL,
+	[mesa] [int] NOT NULL,
+ CONSTRAINT [PK_cuenta_por_mesa] PRIMARY KEY CLUSTERED 
+(
+	[cuenta] ASC,
+	[mesa] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[permisos] CHECK CONSTRAINT [FK_permisos_modulos]
+INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (1, 3)
+INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (4, 4)
+/****** Object:  Table [dbo].[ciudades]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
 GO
-/****** Object:  ForeignKey [FK_permisos_perfiles]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[permisos]  WITH CHECK ADD  CONSTRAINT [FK_permisos_perfiles] FOREIGN KEY([perfil])
-REFERENCES [dbo].[perfiles] ([codigo])
+SET QUOTED_IDENTIFIER ON
 GO
-ALTER TABLE [dbo].[permisos] CHECK CONSTRAINT [FK_permisos_perfiles]
+SET ANSI_PADDING ON
 GO
-/****** Object:  ForeignKey [FK_mesas_locales]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[mesas]  WITH CHECK ADD  CONSTRAINT [FK_mesas_locales] FOREIGN KEY([local])
-REFERENCES [dbo].[locales] ([codigo])
+CREATE TABLE [dbo].[ciudades](
+	[codigo] [int] NOT NULL,
+	[nombre] [varchar](50) NULL,
+	[provincia] [int] NULL,
+	[pais] [int] NULL,
+ CONSTRAINT [PK_ciudades] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[mesas] CHECK CONSTRAINT [FK_mesas_locales]
+SET ANSI_PADDING OFF
 GO
-/****** Object:  ForeignKey [FK_eventos_tipos_eventos]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[eventos]  WITH CHECK ADD  CONSTRAINT [FK_eventos_tipos_eventos] FOREIGN KEY([tipo])
-REFERENCES [dbo].[tipos_eventos] ([codigo])
+/****** Object:  Table [dbo].[asientos]    Script Date: 12/12/2017 22:09:15 ******/
+SET ANSI_NULLS ON
 GO
-ALTER TABLE [dbo].[eventos] CHECK CONSTRAINT [FK_eventos_tipos_eventos]
+SET QUOTED_IDENTIFIER ON
 GO
-/****** Object:  ForeignKey [FK_ciudades_paises]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[ciudades]  WITH CHECK ADD  CONSTRAINT [FK_ciudades_paises] FOREIGN KEY([pais])
-REFERENCES [dbo].[paises] ([codigo])
-GO
-ALTER TABLE [dbo].[ciudades] CHECK CONSTRAINT [FK_ciudades_paises]
-GO
-/****** Object:  ForeignKey [FK_ciudades_provincias]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[ciudades]  WITH CHECK ADD  CONSTRAINT [FK_ciudades_provincias] FOREIGN KEY([provincia])
-REFERENCES [dbo].[provincias] ([codigo])
-GO
-ALTER TABLE [dbo].[ciudades] CHECK CONSTRAINT [FK_ciudades_provincias]
-GO
-/****** Object:  ForeignKey [FK_evento_por_cuenta_cuentas]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[evento_por_cuenta]  WITH CHECK ADD  CONSTRAINT [FK_evento_por_cuenta_cuentas] FOREIGN KEY([cuenta])
-REFERENCES [dbo].[cuentas] ([codigo])
-GO
-ALTER TABLE [dbo].[evento_por_cuenta] CHECK CONSTRAINT [FK_evento_por_cuenta_cuentas]
-GO
-/****** Object:  ForeignKey [FK_evento_por_cuenta_eventos]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[evento_por_cuenta]  WITH CHECK ADD  CONSTRAINT [FK_evento_por_cuenta_eventos] FOREIGN KEY([evento])
-REFERENCES [dbo].[eventos] ([codigo])
-GO
-ALTER TABLE [dbo].[evento_por_cuenta] CHECK CONSTRAINT [FK_evento_por_cuenta_eventos]
-GO
-/****** Object:  ForeignKey [FK_evento_por_cuenta_perfiles]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[evento_por_cuenta]  WITH CHECK ADD  CONSTRAINT [FK_evento_por_cuenta_perfiles] FOREIGN KEY([perfil])
-REFERENCES [dbo].[perfiles] ([codigo])
-GO
-ALTER TABLE [dbo].[evento_por_cuenta] CHECK CONSTRAINT [FK_evento_por_cuenta_perfiles]
-GO
-/****** Object:  ForeignKey [FK_direcciones_ciudades]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[direcciones]  WITH CHECK ADD  CONSTRAINT [FK_direcciones_ciudades] FOREIGN KEY([ciudad])
-REFERENCES [dbo].[ciudades] ([codigo])
-GO
-ALTER TABLE [dbo].[direcciones] CHECK CONSTRAINT [FK_direcciones_ciudades]
-GO
-/****** Object:  ForeignKey [FK_direcciones_paises]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[direcciones]  WITH CHECK ADD  CONSTRAINT [FK_direcciones_paises] FOREIGN KEY([pais])
-REFERENCES [dbo].[paises] ([codigo])
-GO
-ALTER TABLE [dbo].[direcciones] CHECK CONSTRAINT [FK_direcciones_paises]
-GO
-/****** Object:  ForeignKey [FK_direcciones_provincias]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[direcciones]  WITH CHECK ADD  CONSTRAINT [FK_direcciones_provincias] FOREIGN KEY([provincia])
-REFERENCES [dbo].[provincias] ([codigo])
-GO
-ALTER TABLE [dbo].[direcciones] CHECK CONSTRAINT [FK_direcciones_provincias]
-GO
-/****** Object:  ForeignKey [FK_vehiculos_direcciones]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[vehiculos]  WITH CHECK ADD  CONSTRAINT [FK_vehiculos_direcciones] FOREIGN KEY([direccion_partida])
-REFERENCES [dbo].[direcciones] ([codigo])
-GO
-ALTER TABLE [dbo].[vehiculos] CHECK CONSTRAINT [FK_vehiculos_direcciones]
-GO
-/****** Object:  ForeignKey [FK_vehiculos_direcciones1]    Script Date: 12/10/2017 16:46:57 ******/
-ALTER TABLE [dbo].[vehiculos]  WITH CHECK ADD  CONSTRAINT [FK_vehiculos_direcciones1] FOREIGN KEY([direccion_arrivo])
-REFERENCES [dbo].[direcciones] ([codigo])
-GO
-ALTER TABLE [dbo].[vehiculos] CHECK CONSTRAINT [FK_vehiculos_direcciones1]
+CREATE TABLE [dbo].[asientos](
+	[codigo] [int] IDENTITY(1,1) NOT NULL,
+	[origen] [int] NULL,
+	[codigo_origen] [int] NULL,
+	[cuenta] [int] NULL,
+ CONSTRAINT [PK_asientos] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
