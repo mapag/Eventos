@@ -100,7 +100,7 @@
             </section>
             <section class="wrapper">
                 <div>
-                    <asp:Button ID="btn_CrearEvento" class="btn btn-primary col-lg-3" runat="server" style="margin-bottom: 30px;" Text="CrearEvento" OnClick="btn_CrearEvento_Click"/>
+                    <asp:LinkButton ID="btn_CrearEvento" class="btn btn-primary btn-lg" style="margin-bottom: 30px;" OnClick="btn_CrearEvento_Click" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>CrearEvento</asp:LinkButton>
                     </div>
                 <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="BorrarFila" OnSelectedIndexChanged="EditarFila">
                     <AlternatingRowStyle BackColor="White" />

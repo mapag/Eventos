@@ -66,8 +66,9 @@
                 </div>
             </section>
             <section class="wrapper">
-                <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style=" margin-bottom:20px" Visible="false" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Gestionar Mesas</asp:LinkButton>
-                <asp:Button ID="btn_invitar" runat="server" CssClass="btn btn-primary" Text="Invitar a alguien" PostBackUrl="~/CrearInvitacion.aspx" Style=" margin-bottom:20px" Visible="false"/>
+                <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style="margin-bottom:20px" Visible="false" runat="server"><i class="fa fa-bars" style="margin-right: 10px;"></i>Gestionar Mesas</asp:LinkButton>
+                <asp:LinkButton ID="btn_invitar" CssClass="btn btn-primary" PostBackUrl="~/CrearInvitacion.aspx" Style="margin-bottom:20px" Visible="false" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Invitar a alguien</asp:LinkButton>
+          
                 <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
