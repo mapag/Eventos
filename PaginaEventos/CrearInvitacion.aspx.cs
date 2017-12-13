@@ -42,7 +42,8 @@ public partial class CrearInvitacion : System.Web.UI.Page
             string cuenta = ad.ObtenerValor("select codigo from cuentas where mail = '" + txt_email.Text + "'");
             consultaSQL = "if not exists (select * from evento_por_cuenta where cuenta = " + cuenta + " and evento = " + Session["CodigoEvento"] + ") begin insert into evento_por_cuenta (cuenta, evento, perfil, confirmacion) values (" + cuenta + ", " + Session["CodigoEvento"] + ", 3, 0) end";
             ad.EjecutarConsulta(consultaSQL);
-            Response.Redirect("GestionEvento.aspx");
+            if (Session["TipoEvento"].ToString() == "6") Response.Redirect("GestionEvento.aspx");
+            else Response.Redirect("GestionViajes.aspx");
         }
     }
 
