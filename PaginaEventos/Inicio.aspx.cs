@@ -43,7 +43,8 @@ public partial class Inicio : System.Web.UI.Page
     {
         Session["CodigoEvento"] = grd_eventos.Rows[grd_eventos.SelectedIndex].Cells[2].Text;
         Session["TipoEvento"] = ad.ObtenerValor("Select tipo from eventos where codigo = " + Session["CodigoEvento"]);
-        Response.Redirect("GestionEvento.aspx");
+        if (Session["TipoEvento"].ToString() == "6") Response.Redirect("GestionEvento.aspx");
+        else Response.Redirect("GestionViejes.aspx");
     }
     protected void btn_CrearEvento_Click(object sender, EventArgs e)
     {

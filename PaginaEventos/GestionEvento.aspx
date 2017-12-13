@@ -66,7 +66,9 @@
                 </div>
             </section>
             <section class="wrapper">
-                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:Button ID="btn_gestionmesas" runat="server" CssClass="btn btn-primary" Text="Gestionar Mesas" PostBackUrl="~/GestionMesas.aspx" Style=" margin-bottom:20px" Visible="false"/>
+                <asp:Button ID="btn_invitar" runat="server" CssClass="btn btn-primary" Text="Invitar a alguien" PostBackUrl="~/CrearInvitacion.aspx" Style=" margin-bottom:20px" Visible="false"/>
+                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -79,10 +81,8 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-            </section>
-            
-            <section class="wrapper">
-                <asp:Button ID="btn_gestionmesas" runat="server" CssClass="btn btn-primary" Text="Gestionar Mesas" PostBackUrl="~/GestionMesas.aspx" Visible="false" />
+                <asp:Button ID="btn_promocion" runat="server" CssClass="btn btn-info" Text="Promocionar a Administrador" OnClick="btn_promocion_Click" Visible="false" />
+                <asp:Button ID="btn_noinvitar" runat="server" CssClass="btn btn-danger" Text="Eliminar Invitación" OnClick="btn_noinvitar_Click" Visible="false" />
             </section>
 
             <!--CONTENIDO end -->
