@@ -35,7 +35,7 @@ public partial class CrearCuenta : System.Web.UI.Page
             lbl_email.Text = "El campo debe tener el formato correcto.";
             correcto = false;
         }
-        if (ad.ContarRegistros("select * from cuentas where mail = '" + txt_email.Text + "'") > 0)
+        if (ad.ContarRegistros("select * from cuentas where mail = '" + txt_email.Text + "' and contrasena is not null") > 0)
         {
             lbl_email.Text = "El correo ya esta en uso";
             correcto = false;
@@ -57,7 +57,7 @@ public partial class CrearCuenta : System.Web.UI.Page
         }
         if (correcto)
         {
-            string consultaSQL = "insert into cuentas(nombre, apellido, mail, contrasena) values ('" + txt_nombre.Text + "', '" + txt_apellido.Text + "', '" + txt_email.Text + "', '" + txt_contrasena.Text + "')";
+            string consultaSQL = "if exists ( select * from cuentas where mail = '" + txt_email.Text + "') begin update cuentas set nombre = '" + txt_nombre.Text + "', apellido = '" + txt_apellido.Text + "', contrasena = '" + txt_contrasena.Text + "' where mail = '" + txt_email.Text + "' end else begin insert into cuentas (nombre, apellido, mail, contrasena) values ('" + txt_nombre.Text + "', '" + txt_apellido.Text + "', '" + txt_email.Text + "', '" + txt_contrasena.Text + "') end";
             try
             {
                 ad.EjecutarConsulta(consultaSQL);

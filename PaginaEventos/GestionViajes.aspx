@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Inicio.aspx.cs" Inherits="Inicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GestionViajes.aspx.cs" Inherits="GestionViajes" %>
 
 <!DOCTYPE html>
 
@@ -30,12 +30,12 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
     <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/fullcalendar.css" />
     <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+    <link href="css/styleGestionEvento.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -57,60 +57,21 @@
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>Inicio</h3>
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Gestion Viaje</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
+                            <li><i class="fa fa-home"></i><a href="GestionViajes.aspx">Gestion Viaje</a></li>
                         </ol>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box blue-bg">
-                            <i class="fa fa-calendar"></i>
-                            <div class="count"><asp:Label ID="lbl_EventosActivos" runat="server" Text="30"></asp:Label></div>
-                            <div class="title">Eventos Activos</div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box dark-bg">
-                            <i class="fa fa-calendar"></i>
-                            <div class="count"><asp:Label ID="lbl_EventosTotales" runat="server" Text="50"></asp:Label></div>
-                            <div class="title">Eventos Totales</div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box brown-bg">
-                            <i class="fa fa-user"></i>
-                            <div class="count"><asp:Label ID="lbl_ClientesActivos" runat="server" Text="70"></asp:Label></div>
-                            <div class="title">Clientes Activos</div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="info-box green-bg">
-                            <i class="fa fa-user"></i>
-                            <div class="count"><asp:Label ID="lbl_ClientesTotales" runat="server" Text="90"></asp:Label></div>
-                            <div class="title">Clientes Totales</div>
-                        </div>
                     </div>
                 </div>
             </section>
             <section class="wrapper">
-                <div>
-                    <asp:LinkButton ID="btn_CrearEvento" class="btn btn-primary btn-lg" style="margin-bottom: 30px;" OnClick="btn_CrearEvento_Click" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Crear Evento</asp:LinkButton>
-                    </div>
-                <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="BorrarFila" OnSelectedIndexChanged="EditarFila">
+                <asp:Button ID="btn_invitar" runat="server" CssClass="btn btn-primary" Text="Invitar a alguien" PostBackUrl="~/CrearInvitacion.aspx" Style=" margin-bottom:20px" Visible="false"/>
+                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
-                    <Columns>
-                        <asp:CommandField ButtonType="Button" ShowSelectButton="true" ControlStyle-CssClass="btn btn-info"/>
-                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger"/>
-                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#000000" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EFF3FB" />
                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -119,12 +80,14 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
+                <asp:Button ID="btn_promocion" runat="server" CssClass="btn btn-info" Text="Promocionar a Administrador" OnClick="btn_promocion_Click" Visible="false" />
+                <asp:Button ID="btn_noinvitar" runat="server" CssClass="btn btn-danger" Text="Eliminar Invitación" OnClick="btn_noinvitar_Click" Visible="false" />
             </section>
-        </section>
-        <!--CONTENIDO end -->
-    </form>
-    <!-- container section start -->
 
+            <!--CONTENIDO end -->
+        </section>
+        <!-- container section start -->
+    </form>
     <!-- javascripts -->
     <script src="js/allscripts.js"></script>
     <script>

@@ -39,8 +39,6 @@
                     <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Contraseña" type="password" autofocus=""></asp:TextBox>
                 </div>
                 <label class="checkbox">
-                    <asp:CheckBox ID="chc_Recordarme" runat="server" />
-                    Recuerdame
                     <span class="pull-right"><a href="CambiarContrasena.aspx">¿Olvidó su contraseña?</a></span>
                 </label>
                 <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
