@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GestionEvento.aspx.cs" Inherits="GestionEvento" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GestionMesas.aspx.cs" Inherits="GestionMesas" %>
 
 <!DOCTYPE html>
 
@@ -57,34 +57,55 @@
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>GestionEvento</h3>
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Gestion Mesas</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
-                            <li><i class="fa fa-home"></i><a href="GestionEvento.aspx">GestionEvento</a></li>
+                            <li><i class="fa fa-home"></i><a href="GestionEvento.aspx">Gestion Evento</a></li>
+                            <li><i class="fa fa-home"></i><a href="GestionMesas.aspx">Gestion Mesas</a></li>
                         </ol>
                     </div>
                 </div>
             </section>
-            <section class="wrapper">
-                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-            </section>
+            <div class="wrapper">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                     <asp:TextBox ID="txt_nuevamesa" runat="server" class="form form-control" placeholder="Nombre la nueva mesa" ></asp:TextBox>
+                    
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                    <asp:Button ID="btn_crearmesa" runat="server" Text="Crear otra mesa" CssClass="btn btn-primary" OnClick="btn_crearmesa_Click"/>
+                </div>
+                
             
-            <section class="wrapper">
-                <asp:Button ID="btn_gestionmesas" runat="server" CssClass="btn btn-primary" Text="Gestionar Mesas" PostBackUrl="~/GestionMesas.aspx" Visible="false" />
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                     <asp:TextBox ID="txt_mesaactual" runat="server" class="form form-control" placeholder="Nombre de mesa actual" ></asp:TextBox>
+                    
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                    <asp:Button ID="btn_cambiarnombremesa" runat="server" Text="cambiar nombre de mesa" CssClass="btn btn-danger" OnClick="btn_cambiarnombremesa_Click"/>
+                </div>
+                
+            </div>
+            
+            <section id="carousel" class="wrapper bg-carousel">
+                <div class="col-lg-12">
+                    
+                    <table class="tabla-car">
+                        <tr>
+                            <td>
+                                <asp:Button ID="btn_izquierda" runat="server" Text="<" CssClass="izquierda btn btn-danger col-lg-3" OnClick="btn_izquierda_Click"/></td>
+                            <td>
+                                <asp:Label ID="lbl_mesa" runat="server" Text="Mesa" CssClass=" glyph_big"></asp:Label></td>
+                            <td>
+                                <asp:Button ID="btn_derecha" runat="server" Text=">" CssClass="derecha btn btn-primary  col-lg-3" OnClick="btn_derecha_Click" /></td>
+                        </tr>
+                        <tr>               
+                            <td><asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control"></asp:ListBox></td>
+                            <td><asp:Button ID="btn_agregar" runat="server" Text="<<" CssClass="btn btn-primary" OnClick="btn_agregar_Click"/><asp:Button ID="btn_quitar" runat="server" Text=">>" CssClass="btn btn-primary" OnClick="btn_quitar_Click"/></td>
+                            <td><asp:DropDownList ID="ddl_invitados" runat="server" CssClass="form form-control"></asp:DropDownList></td> 
+                        </tr>
+                    </table>
+                </div>
             </section>
-
             <!--CONTENIDO end -->
         </section>
         <!-- container section start -->

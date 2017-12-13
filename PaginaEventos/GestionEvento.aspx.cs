@@ -28,5 +28,6 @@ public partial class GestionEvento : System.Web.UI.Page
         if (nivelPer != "Creador" && nivelPer != "Administrador" && nivelPer != "Invitado") Response.Redirect("Pprincipal.aspx");
         dt = ad.ObtenerTabla("invitados", "select * from cuentas");
         go.MostrarGrid(ref grd_invitados, dt);
+        if (Session["TipoEvento"].ToString() == "6") btn_gestionmesas.Visible = true;
     }
 }
