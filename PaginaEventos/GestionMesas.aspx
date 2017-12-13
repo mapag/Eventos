@@ -67,9 +67,9 @@
                     </div>
                 </div>
             </section>
-            <section class="wrapper">
+            <section class="wrapperito">
                 <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-info" OnClick="btnVolver_Click">
-                                <i class="glyphicon glyphicon-chevron-left"></i>Volver</asp:LinkButton>
+                                <i class="glyphicon glyphicon-chevron-left" style="margin-right: 10px;"></i>Volver</asp:LinkButton>
                 <div class="wrapper cuadrito">
 
 
@@ -80,7 +80,7 @@
 
                     </div>
                     <div class="col-lg-2">
-                        <asp:Button ID="btn_crearmesa" runat="server" Text="Crear otra mesa" CssClass="btn btn-primary" OnClick="btn_crearmesa_Click" />
+                        <asp:LinkButton ID="btn_crearmesa" runat="server" CssClass="btn btn-primary" OnClick="btn_crearmesa_Click"><i class="fa fa-plus" style="margin-right: 10px;"></i>Crear otra mesa</asp:LinkButton>
                     </div>
 
 
@@ -89,7 +89,7 @@
 
                     </div>
                     <div class="col-lg-2">
-                        <asp:Button ID="btn_cambiarnombremesa" runat="server" Text="cambiar nombre de mesa" CssClass="btn btn-danger" OnClick="btn_cambiarnombremesa_Click" />
+                        <asp:LinkButton ID="btn_cambiarnombremesa" runat="server" CssClass="btn btn-danger" OnClick="btn_cambiarnombremesa_Click"><i class="fa fa-pencil" style="margin-right: 10px;"></i>Cambiar nombre de mesa</asp:LinkButton>
                     </div>
 
                 </div>
@@ -114,7 +114,8 @@
                             <td>
                                 <asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control listboxlargo"></asp:ListBox></td>
                             <td>
-                                <asp:Button ID="btn_agregar" runat="server" Text="<<" CssClass="btn btn-primary" OnClick="btn_agregar_Click" /><asp:Button ID="btn_quitar" runat="server" Text=">>" CssClass="btn btn-primary" OnClick="btn_quitar_Click" /></td>
+                                <asp:Button ID="btn_agregar" runat="server" Text="<< SENTAR <<" CssClass="btn btn-primary" OnClick="btn_agregar_Click" />
+                                <asp:Button ID="btn_quitar" runat="server" Text=">> LEVANTAR >>" CssClass="btn btn-primary" OnClick="btn_quitar_Click" /></td>
                             <td>
                                 <asp:DropDownList ID="ddl_invitados" runat="server" CssClass="form form-control"></asp:DropDownList></td>
                         </tr>
