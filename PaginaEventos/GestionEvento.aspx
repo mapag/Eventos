@@ -60,7 +60,7 @@
                         <h3 class="page-header"><i class="fa fa-laptop"></i>GestionEvento</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
-                            <li><i class="fa fa-home"></i><a href="GestionEvento.aspx">GestionEvento</a></li>
+                            <li><i class="fa fa-users"></i><a href="GestionEvento.aspx">GestionEvento</a></li>
                         </ol>
                     </div>
                 </div>
