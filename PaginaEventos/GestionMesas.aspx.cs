@@ -57,6 +57,12 @@ public partial class GestionMesas : System.Web.UI.Page
         ad.AgregaraListBoxIDyVAL(ref lst_mesa, "select cpm.cuenta, c.nombre + ' ' + c.apellido as nombre from cuenta_por_mesa cpm inner join cuentas c on c.codigo = cpm.cuenta where cpm.mesa = " + mesa);
         ad.AgregaraDropDownListIDyVAL(ref ddl_invitados, "select epc.cuenta, c.nombre + ' ' + c.apellido as nombre from evento_por_cuenta epc inner join cuentas c on c.codigo = epc.cuenta left join cuenta_por_mesa cpm on c.codigo = cpm.cuenta where epc.evento = " + Session["CodigoEvento"] + " and c.codigo not in ( select cpm.cuenta from cuenta_por_mesa cpm  inner join evento_por_cuenta epc on cpm.cuenta = epc.cuenta where epc.evento = " + Session["CodigoEvento"] + ")");
     }
+
+    protected void btnVolver_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("GestionEvento.aspx");
+    }
+
     protected void btn_cambiarnombremesa_Click(object sender, EventArgs e)
     {
         if (txt_mesaactual.Text != "" && val.Alfanumerico(txt_mesaactual.Text) && ad.ContarRegistros("select * from mesas where nombre = '" + txt_mesaactual.Text + "' and evento = " + Session["CodigoEvento"]) == 0)
@@ -107,4 +113,5 @@ public partial class GestionMesas : System.Web.UI.Page
             cargarvalores(dt.Rows[posicion][0].ToString());
         }
     }
+
 }

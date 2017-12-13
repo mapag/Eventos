@@ -33,6 +33,7 @@
     <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/styleGestionEvento.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
     <link href="css/styleGestionEvento.css" rel="stylesheet" />
@@ -66,45 +67,58 @@
                     </div>
                 </div>
             </section>
-            <div class="wrapper">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                     <asp:TextBox ID="txt_nuevamesa" runat="server" class="form form-control" placeholder="Nombre la nueva mesa" ></asp:TextBox>
-                    
+            <section class="wrapper">
+                <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-info" OnClick="btnVolver_Click">
+                                <i class="glyphicon glyphicon-chevron-left"></i>Volver</asp:LinkButton>
+                <div class="wrapper cuadrito">
+
+
+
+
+                    <div class="col-lg-4">
+                        <asp:TextBox ID="txt_nuevamesa" runat="server" class="form form-control" placeholder="Nombre la nueva mesa"></asp:TextBox>
+
+                    </div>
+                    <div class="col-lg-2">
+                        <asp:Button ID="btn_crearmesa" runat="server" Text="Crear otra mesa" CssClass="btn btn-primary" OnClick="btn_crearmesa_Click" />
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <asp:TextBox ID="txt_mesaactual" runat="server" class="form form-control" placeholder="Nombre de mesa actual"></asp:TextBox>
+
+                    </div>
+                    <div class="col-lg-2">
+                        <asp:Button ID="btn_cambiarnombremesa" runat="server" Text="cambiar nombre de mesa" CssClass="btn btn-danger" OnClick="btn_cambiarnombremesa_Click" />
+                    </div>
+
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                    <asp:Button ID="btn_crearmesa" runat="server" Text="Crear otra mesa" CssClass="btn btn-primary" OnClick="btn_crearmesa_Click"/>
-                </div>
-                
-            
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                     <asp:TextBox ID="txt_mesaactual" runat="server" class="form form-control" placeholder="Nombre de mesa actual" ></asp:TextBox>
-                    
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-                    <asp:Button ID="btn_cambiarnombremesa" runat="server" Text="cambiar nombre de mesa" CssClass="btn btn-danger" OnClick="btn_cambiarnombremesa_Click"/>
-                </div>
-                
-            </div>
-            
+            </section>
             <section id="carousel" class="wrapper bg-carousel">
-                <div class="col-lg-12">
-                    
                     <table class="tabla-car">
                         <tr>
+                            <td style="margin-bottom: 20px;">
+                                <asp:LinkButton ID="btn_izquierda" runat="server" CssClass="izquierda btn btn-danger col-lg-3" OnClick="btn_izquierda_Click">
+                                <i class="glyphicon glyphicon-chevron-left"></i></asp:LinkButton>
+                            </td>
+
                             <td>
-                                <asp:Button ID="btn_izquierda" runat="server" Text="<" CssClass="izquierda btn btn-danger col-lg-3" OnClick="btn_izquierda_Click"/></td>
+                                <asp:Label ID="Label1" runat="server" Text="Nombre de la mesa:" CssClass="titulo"></asp:Label>
+                                <asp:Label ID="lbl_mesa" runat="server" Text="Mesa" CssClass="titulo"></asp:Label></td>
                             <td>
-                                <asp:Label ID="lbl_mesa" runat="server" Text="Mesa" CssClass=" glyph_big"></asp:Label></td>
-                            <td>
-                                <asp:Button ID="btn_derecha" runat="server" Text=">" CssClass="derecha btn btn-primary  col-lg-3" OnClick="btn_derecha_Click" /></td>
+                                <asp:LinkButton ID="btn_derecha" runat="server" CssClass="derecha btn btn-primary col-lg-3" OnClick="btn_derecha_Click">
+                                <i class="glyphicon glyphicon-chevron-right"></i></asp:LinkButton>
+                            </td>
                         </tr>
-                        <tr>               
-                            <td><asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control"></asp:ListBox></td>
-                            <td><asp:Button ID="btn_agregar" runat="server" Text="<<" CssClass="btn btn-primary" OnClick="btn_agregar_Click"/><asp:Button ID="btn_quitar" runat="server" Text=">>" CssClass="btn btn-primary" OnClick="btn_quitar_Click"/></td>
-                            <td><asp:DropDownList ID="ddl_invitados" runat="server" CssClass="form form-control"></asp:DropDownList></td> 
+                        <tr>
+                            <td>
+                                <asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control listboxlargo"></asp:ListBox></td>
+                            <td>
+                                <asp:Button ID="btn_agregar" runat="server" Text="<<" CssClass="btn btn-primary" OnClick="btn_agregar_Click" /><asp:Button ID="btn_quitar" runat="server" Text=">>" CssClass="btn btn-primary" OnClick="btn_quitar_Click" /></td>
+                            <td>
+                                <asp:DropDownList ID="ddl_invitados" runat="server" CssClass="form form-control"></asp:DropDownList></td>
                         </tr>
                     </table>
-                </div>
             </section>
             <!--CONTENIDO end -->
         </section>
