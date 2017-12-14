@@ -112,7 +112,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control listboxlargo"></asp:ListBox></td>
+                                <asp:ListBox ID="lst_mesa" runat="server" CssClass="form form-control listboxlargo" style="margin-top: 20px;"></asp:ListBox></td>
                             <td>
                                 <asp:Button ID="btn_agregar" runat="server" Text="<< SENTAR <<" CssClass="btn btn-primary" OnClick="btn_agregar_Click" />
                                 <asp:Button ID="btn_quitar" runat="server" Text=">> LEVANTAR >>" CssClass="btn btn-primary" OnClick="btn_quitar_Click" /></td>

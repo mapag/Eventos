@@ -35,7 +35,7 @@ public partial class GestionEvento : System.Web.UI.Page
                 grd_invitados.AutoGenerateSelectButton = true;
             }
         }
-        dt = ad.ObtenerTabla("invitados", "select c.apellido + ' ' + c.nombre as Nombre, c.mail as 'Correo Electronico', c.telefono as Telefono, p.descripcion as 'Su roll', (case epc.confirmacion when 1 then 'Si' when 0 then 'no' end) as 'Confirmación' from cuentas c inner join evento_por_cuenta epc on epc.cuenta = c.codigo inner join perfiles p on p.codigo = epc.perfil where epc.evento = " + Session["CodigoEvento"] + "order by epc.perfil asc, c.apellido asc");
+        dt = ad.ObtenerTabla("invitados", "select c.apellido + ' ' + c.nombre as Nombre, c.mail as 'Correo Electrónico', c.telefono as Teléfono, p.descripcion as 'Su rol', (case epc.confirmacion when 1 then 'Si' when 0 then 'No' end) as 'Confirmación' from cuentas c inner join evento_por_cuenta epc on epc.cuenta = c.codigo inner join perfiles p on p.codigo = epc.perfil where epc.evento = " + Session["CodigoEvento"] + "order by epc.perfil asc, c.apellido asc");
         go.MostrarGrid(ref grd_invitados, dt);
     }
     protected void btn_promocion_Click(object sender, EventArgs e)

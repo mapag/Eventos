@@ -32,11 +32,14 @@
                 <asp:Label ID="lbl_confirm" runat="server" Text=""></asp:Label>
             </div>
             <div class="login-wrap">
-                <asp:TextBox ID="txt_confirm" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txt_confirm" runat="server" CssClass="form-control "></asp:TextBox>
             </div>
             <div class="login-wrap">
                 <asp:Button ID="btn_confirm" runat="server" Text="Eliminar Registro" CssClass="btn btn-danger centered" OnClick="btn_confirm_Click" />
-                <asp:Button ID="btn_regresar" runat="server" Text="Eliminar Registro" CssClass="btn btn-danger centered" OnClick="btn_regresar_Click" />
+                <asp:Button ID="btn_regresar" runat="server" Text="Cancelar" CssClass="btn btn-danger centered" OnClick="btn_regresar_Click" />
+            </div>
+            <div class="login-wrap">
+                <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
             </div>
         </form>
     </div>

@@ -61,7 +61,7 @@ public partial class CrearCuenta : System.Web.UI.Page
             try
             {
                 ad.EjecutarConsulta(consultaSQL);
-                Response.Redirect("Login.aspx");
+                Response.Redirect("ValidarCuenta.aspx");
             }
             catch
             {

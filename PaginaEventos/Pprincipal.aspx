@@ -116,7 +116,7 @@
                         <div class="service-box mt-5 mx-auto">
                             <i class="fa fa-4x fa-facebook text-primary mb-3 sr-icons"></i>
                             <h3 class="mb-3">Conexion con otras redes sociales</h3>
-                            <p class="text-muted mb-0">Siempre vas a poder compartir lo de tu red social en las redes sociales más usadas.</p>
+                            <p class="text-muted mb-0">Siempre podras compartir contenido de tu red social en las más usadas.</p>
                         </div>
                     </div>
                 </div>

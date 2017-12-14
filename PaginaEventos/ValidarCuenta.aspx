@@ -32,10 +32,13 @@
             <div class="login-wrap">
                 <div id="output"></div>
                 <div class="form-box">
-                    <p class="">Solo un paso más!</p>
-                    <strong>Te hemos enviado un código de verificación al mail para válidar que sea correcto. Cuando encuentres el mensaje, lo unico que tenes que hacer es darle click al link y ya va a estar verificada tu cuenta.</strong>
-                    <a href="Login.aspx">
-                    <button type="submit" class="btn btn-primary" style="margin-bottom: 30px;">Volver a la página de inicio de sesión</button></a>
+                    <div class="form-group">
+                        <p style="font-size: 20px;" class="caption">Solo un paso más!</p>
+                        <strong style="font-size: 20px;">Te hemos enviado un código de verificación al mail para válidar que sea correcto. <br /> Cuando encuentres el mensaje, lo unico que tenes que hacer es darle click al link y ya va a estar verificada tu cuenta.</strong>
+                    </div>
+                    <div class="form-group" style=" margin-top: 40px;">
+                        <asp:LinkButton ID="btnVolver" CssClass="btn btn-primary" runat="server" OnClick="btnVolver_Click">Volver a la página de inicio de sesión</asp:LinkButton>
+                    </div>
                 </div>
             </div>
         </form>

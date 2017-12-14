@@ -5086,6 +5086,9 @@ ul.ft-link li a i {
 
     display: inline-block;
 
+    max-height: 34px;
+    max-width: 34px;
+
 }
 
 .profile-ava img.simple{

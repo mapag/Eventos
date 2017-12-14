@@ -63,7 +63,7 @@
                     <asp:Label ID="img_pequena" runat="server" Text=""></asp:Label>
                     <div class="fb-profile-text">
                         <h1><asp:Label ID="lbl_nombre" runat="server"></asp:Label></h1>
-                        <p><asp:TextBox ID="txt_frase" runat="server"></asp:TextBox></p>
+                        <p><asp:TextBox ID="txt_frase" style="width: 400px;" runat="server"></asp:TextBox></p>
                     </div>
                 </div>
                 <div class="info-perfil">

@@ -39,7 +39,7 @@
                     <asp:TextBox ID="txt_contrasena" runat="server" class="form-control" placeholder="Contraseña" type="password" autofocus=""></asp:TextBox>
                 </div>
                 <label class="checkbox">
-                    <span class="pull-right"><a href="CambiarContrasena.aspx">¿Olvidó su contraseña?</a></span>
+                    <span class="pull-right"><a href="404.aspx">¿Olvidó su contraseña?</a></span>
                 </label>
                 <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
                 <asp:Button ID="btn_conectar" runat="server" Text="Conectarse" class="btn btn-primary btn-lg btn-block" OnClick="btn_conectar_Click" />
