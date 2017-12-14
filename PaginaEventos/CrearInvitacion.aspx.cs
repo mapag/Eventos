@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
+using System.Net.Mail;
 
 public partial class CrearInvitacion : System.Web.UI.Page
 {
@@ -18,6 +19,7 @@ public partial class CrearInvitacion : System.Web.UI.Page
     }
     protected void btn_registrar_Click(object sender, EventArgs e)
     {
+        enviarMail(txt_email.Text);
         Reiniciar_lbls();
         bool correcto = true;
         if (txt_nombre.Text == "" || !val.Alfabetico(txt_nombre.Text))
@@ -51,5 +53,28 @@ public partial class CrearInvitacion : System.Web.UI.Page
     {
         lbl_apellido.ForeColor = lbl_email.ForeColor = lbl_error.ForeColor = lbl_nombre.ForeColor = Color.OrangeRed;
         lbl_apellido.Text = lbl_email.Text = lbl_error.Text = lbl_nombre.Text = "";
+    }
+
+    protected void enviarMail( string mailUsuario )
+    {
+        try
+        {
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("eventosmatlau@gmail.com");
+            mail.To.Add(mailUsuario);
+            mail.Subject = "Invitación a EVENTO!";
+            mail.Body = "Nos comunicamos con vos porque fuiste invitado a un nuevo evento en nuestra plataforma EV. Te recomendamos que entres y confirmes tu asistencia.";
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("eventosmatlau", "mateolautaro");
+            SmtpServer.EnableSsl = true;
+
+            SmtpServer.Send(mail);
+        }
+        catch (Exception ex)
+        {
+        }
     }
 }

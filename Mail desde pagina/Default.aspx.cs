@@ -20,13 +20,13 @@ public partial class _Default : System.Web.UI.Page
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            mail.From = new MailAddress("mateo.123pagg@gmail.com");
+            mail.From = new MailAddress("eventosmatlau@gmail.com");
             mail.To.Add("mateopag98@gmail.com");
             mail.Subject = "Test Mail";
             mail.Body = "This is for testing SMTP mail from GMAIL";
 
             SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("mateoo.123pagg", "123123asd");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("eventosmatlau", "mateolautaro");
             SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
