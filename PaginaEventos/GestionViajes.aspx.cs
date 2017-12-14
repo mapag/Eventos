@@ -23,7 +23,7 @@ public partial class GestionViajes : System.Web.UI.Page
         string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
         if (imagen == null) imagen = "img/avatar2_small.jpg";
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
-        lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, 10, 20);
+        lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, 10);
         string nivelPer = per.CuentaEnEvento(Session["CodigoCuenta"].ToString(), Session["CodigoEvento"].ToString());
         if (nivelPer != "Creador" && nivelPer != "Administrador" && nivelPer != "Invitado") Response.Redirect("Pprincipal.aspx");
         if (nivelPer == "Creador" || nivelPer == "Administrador")
@@ -42,6 +42,7 @@ public partial class GestionViajes : System.Web.UI.Page
         if (dt.Rows[grd_invitados.SelectedIndex][3].ToString() == "Invitado") ad.EjecutarConsulta("update evento_por_cuenta set perfil = 2 where cuenta = (select codigo from cuentas where mail = '" + dt.Rows[grd_invitados.SelectedIndex][1].ToString() + "')");
         else if (dt.Rows[grd_invitados.SelectedIndex][3].ToString() == "Administrador") ad.EjecutarConsulta("update evento_por_cuenta set perfil = 3 where cuenta = (select codigo from cuentas where mail = '" + dt.Rows[grd_invitados.SelectedIndex][1].ToString() + "')");
         go.MostrarGrid(ref grd_invitados, dt);
+        Response.Redirect("GestionViajes.aspx");
     }
     protected void grd_invitados_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -63,5 +64,6 @@ public partial class GestionViajes : System.Web.UI.Page
     {
         ad.EjecutarConsulta("delete from evento_por_cuenta where cuenta = (select codigo from cuentas where mail = '" + dt.Rows[grd_invitados.SelectedIndex][1].ToString() + "') and evento = " + Session["CodigoEvento"]);
         // Eliminarlo tambien de la mesa en la que este colocado.
+        Response.Redirect("GestionViajes.aspx");
     }
 }
