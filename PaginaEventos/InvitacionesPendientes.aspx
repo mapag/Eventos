@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Miperfil.aspx.cs" Inherits="Miperfil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InvitacionesPendientes.aspx.cs" Inherits="InvitacionesPendientes" %>
 
 <!DOCTYPE html>
 
@@ -30,13 +30,12 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
     <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/fullcalendar.css" />
     <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/stylePerfil.css" rel="stylesheet" />
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
+    <link href="css/styleGestionEvento.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -54,61 +53,42 @@
 
 
         <!--CONTENIDO start -->
-        <section id="main-content" class="wrapper">
-            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-            <div class="container contenedor">
-                <div class="fb-profile">
-                    <asp:Label ID="img_grande" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="img_pequena" runat="server" Text=""></asp:Label>
-                    <div class="fb-profile-text">
-                        <h1><asp:Label ID="lbl_nombre" runat="server"></asp:Label></h1>
-                        <p><asp:TextBox ID="txt_frase" runat="server"></asp:TextBox></p>
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Gestion Viaje</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
+                            <li><i class="fa fa-home"></i><a href="InvitacionesPendientes.aspx">Invitaciones Pendientes</a></li>
+                        </ol>
                     </div>
                 </div>
-                <div class="info-perfil">
-                    <div id="profile" class="tab-pane">
-                        <section class="panel">
-                            <div class="bio-graph-heading">
-                                <h1>Mi Cuenta</h1>
-                            </div>
-                            <div class="panel-body bio-graph-info">
-                                <div class="row">
-                                    <div class="bio-row">
-                                        <p><span>Nombres: </span><asp:TextBox ID="txt_nombre" runat="server"></asp:TextBox></p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Apellidos: </span><asp:TextBox ID="txt_apellido" runat="server"></asp:TextBox></p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Cumpleaños: </span><asp:TextBox ID="txt_nacimiento" runat="server"></asp:TextBox></p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Email: </span><asp:TextBox ID="txt_mail" runat="server"></asp:TextBox></p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Teléfono: </span><asp:TextBox ID="txt_tel" runat="server"></asp:TextBox></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="row">
-                                <asp:Button ID="btn_guardar" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="btn_guardar_Click" />
-                            </div>
-                        </section>
-                    </div>
-                </div>
+            </section>
+            <section class="wrapper">
+                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:CommandField ShowSelectButton="True" />
+                    </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                </asp:GridView>
+                <asp:Button ID="btn_promocion" runat="server" CssClass="btn btn-info" Text="Aceptar Invitación" OnClick="btn_promocion_Click" />
+            </section>
 
-            </div>
-            <!-- /container -->
+            <!--CONTENIDO end -->
         </section>
-        <!--CONTENIDO end -->
-
-
+        <!-- container section start -->
     </form>
-    <!-- container section start -->
-
     <!-- javascripts -->
     <script src="js/allscripts.js"></script>
     <script>
@@ -158,3 +138,4 @@
     </script>
 </body>
 </html>
+
