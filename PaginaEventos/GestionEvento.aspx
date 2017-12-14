@@ -57,18 +57,39 @@
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>GestionEvento</h3>
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Gestion del Evento</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
-                            <li><i class="fa fa-users"></i><a href="GestionEvento.aspx">GestionEvento</a></li>
+                            <li><i class="fa fa-users"></i><a href="GestionEvento.aspx">Gestion Evento</a></li>
                         </ol>
                     </div>
                 </div>
             </section>
             <section class="wrapper">
-                <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style="margin-bottom:20px" Visible="false" runat="server"><i class="fa fa-bars" style="margin-right: 10px;"></i>Gestionar Mesas</asp:LinkButton>
-                <asp:LinkButton ID="btn_invitar" CssClass="btn btn-primary" PostBackUrl="~/CrearInvitacion.aspx" Style="margin-bottom:20px" Visible="false" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Invitar a alguien</asp:LinkButton>
-          
+                <h1 style="border: double rgba(54,66,74,1) 10px; text-align: center">Información del evento</h1>
+                <div class="row">
+                    <h1 class="col-lg-2"></h1>
+                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Descripción: </h1>
+                    <p  class="col-lg-4" style="margin-top: 20px; font-size:27px;  border: double rgba(54,66,74,1) 10px; text-align: center">1r evento creado desde la pagina CrearEvento.</p>
+                    <h1 class="col-lg-2"></h1>
+                </div>
+                <div class="row">
+                    <h1 class="col-lg-2"></h1>
+                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Fecha y Hora de Inicio: </h1>
+                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">13/12/2017 13:00 PM </h1>
+                    <h1 class="col-lg-2"></h1>
+                </div>
+                <div class="row">
+                    <h1 class="col-lg-2"></h1>
+                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Fecha y Hora de Fin: </h1>
+                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">17/12/2017 13:00 PM </h1>
+                    <h1 class="col-lg-2"></h1>
+                </div>
+            </section>
+            <section class="wrapper">
+                <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-bars" style="margin-right: 10px;"></i>Gestionar Mesas</asp:LinkButton>
+                <asp:LinkButton ID="btn_invitar" CssClass="btn btn-primary" PostBackUrl="~/CrearInvitacion.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Invitar a alguien</asp:LinkButton>
+
                 <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />

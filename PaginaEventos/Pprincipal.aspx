@@ -10,7 +10,7 @@
     <meta name="author" content=""/>
 
     <title>EV: Planifica tu evento</title>
-    <link rel="icon" href="demo_icon.ico" sizes="72x72">
+    <link rel="icon" href="demo_icon.ico" sizes="72x72"/>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     
@@ -262,7 +262,7 @@
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
                         <p>
-                            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+                            <a href="mailto:eventosmatlau@gmail.com">eventosmatlau@gmail.com</a>
                         </p>
                     </div>
                 </div>
