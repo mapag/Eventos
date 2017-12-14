@@ -20,7 +20,7 @@ public partial class Inicio : System.Web.UI.Page
         string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
         if (imagen == null) imagen = "img/avatar2_small.jpg";
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
-        lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, 10, 20);
+        lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
         GenerarTabla();
         lbl_EventosActivos.Text = ad.ObtenerValor("select COUNT(codigo) from eventos where estado = 1");
         lbl_EventosTotales.Text = ad.ObtenerValor("select COUNT(codigo) from eventos");
@@ -30,7 +30,7 @@ public partial class Inicio : System.Web.UI.Page
 
     protected void GenerarTabla()
     {
-        dt = ad.ObtenerTabla("eventos", "select e.codigo as Codigo, e.descripcion as Descripción, e.inicio as 'Fecha Inicio', e.fin as 'Fecha Fin', (case when epc.confirmacion = 1 then 'Si' else 'No' end) as Confirmacion, p.descripcion as 'Tu Rol' from eventos e inner join evento_por_cuenta epc on epc.evento = e.codigo inner join cuentas on cuentas.codigo = epc.cuenta inner join perfiles p on p.codigo = epc.perfil where e.estado = 0 and cuentas.codigo = " + Session["CodigoCuenta"]);
+        dt = ad.ObtenerTabla("eventos", "select e.codigo as Código, e.descripcion as Descripción, e.inicio as 'Fecha de Inicio', e.fin as 'Fecha de Fin', (case when epc.confirmacion = 1 then 'Si' else 'No' end) as Confirmación, p.descripcion as 'Tu Rol' from eventos e inner join evento_por_cuenta epc on epc.evento = e.codigo inner join cuentas on cuentas.codigo = epc.cuenta inner join perfiles p on p.codigo = epc.perfil where e.estado = 0 and cuentas.codigo = " + Session["CodigoCuenta"]);
         go.MostrarGrid(ref grd_eventos, dt);
     }
 

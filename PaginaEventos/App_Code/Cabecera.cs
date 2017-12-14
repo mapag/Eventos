@@ -19,7 +19,7 @@ public class Cabecera
 		//
 	}
 
-    public string GenerarCabecera(string img_usuario, string nombre_usuario, int cant_invitaciones, int cant_novedades){
+    public string GenerarCabecera(string img_usuario, string nombre_usuario, int cant_invitaciones){
         String cabecera;
         cabecera = 
           "<header class='header dark-bg'>" +
@@ -50,12 +50,11 @@ public class Cabecera
                     "</li>" +
                     // 
                     "<li id='alert_notificatoin_bar' class='dropdown'>" +
-                        "<a data-toggle='dropdown' class='dropdown-toggle' href='#'><i class='icon-bell-l'></i><span class='badge bg-important'>" + (cant_invitaciones+cant_novedades).ToString() + "</span></a>" +
+                        "<a data-toggle='dropdown' class='dropdown-toggle' href='#'><i class='icon-bell-l'></i><span class='badge bg-important'>" + (cant_invitaciones).ToString() + "</span></a>" +
                         "<ul class='dropdown-menu extended notification'>" +
                             "<div class='notify-arrow notify-arrow-blue'></div>" +
-                            "<li><p class='blue'>Tiene " + (cant_invitaciones + cant_novedades).ToString() + " notificaciones nuevas</p></li>" + 
-                            "<li><a href='#'><span class='label label-primary'><i class='icon_profile'></i></span>Invitaciones pendientes<span class='small italic pull-right'>" + cant_invitaciones.ToString() + "</span></a></li>" +
-                            "<li><a href='#'><span class='label label-warning'><i class='icon_book_alt'></i></span>Novedades en Eventos<span class='small italic pull-right'>" + cant_novedades.ToString() + "</span></a></li>" +
+                            "<li><p class='blue'>Tiene " + (cant_invitaciones).ToString() + " notificaciones nuevas</p></li>" + 
+                            "<li><a href='InvitacionesPendientes.aspx'><span class='label label-primary'><i class='icon_profile'></i></span>Invitaciones pendientes<span class='small italic pull-right'>" + cant_invitaciones.ToString() + "</span></a></li>" +
                         "</ul></li></ul></div>" +
           "</header>";
 

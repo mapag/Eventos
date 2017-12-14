@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="img/favicon.png" />
 
     <title>Eventos.-</title>
+    <link rel="icon" href="demo_icon.ico" sizes="72x72"/>
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />

@@ -40,7 +40,7 @@
 
 </head>
 <body>
-    <section id="container" class="" runat="server">
+    <form id="container" class="" runat="server">
 
         <!--CABECERA start-->
         <asp:Label ID="lbl_cabecera" runat="server" Text=""></asp:Label>
@@ -59,11 +59,11 @@
 
             <div class="container contenedor">
                 <div class="fb-profile">
-                    <img align="left" class="fb-image-lg" src="img/portada.jpg" alt="Cambiar foto de portada" />
-                    <img align="left" class="fb-image-profile thumbnail" src="img/profile-picture.jpg" alt="Cambiar foto de perfil" />
+                    <asp:Label ID="img_grande" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="img_pequena" runat="server" Text=""></asp:Label>
                     <div class="fb-profile-text">
-                        <h1>Mateo Pagniez</h1>
-                        <p>Aca iria una frase o algo</p>
+                        <h1><asp:Label ID="lbl_nombre" runat="server"></asp:Label></h1>
+                        <p><asp:TextBox ID="txt_frase" style="width: 400px;" runat="server"></asp:TextBox></p>
                     </div>
                 </div>
                 <div class="info-perfil">
@@ -75,28 +75,26 @@
                             <div class="panel-body bio-graph-info">
                                 <div class="row">
                                     <div class="bio-row">
-                                        <p><span>Nombres </span>: Mateo</p>
+                                        <p><span>Nombres: </span><asp:TextBox ID="txt_nombre" runat="server"></asp:TextBox></p>
                                     </div>
                                     <div class="bio-row">
-                                        <p><span>Apellidos </span>: Pagniez</p>
+                                        <p><span>Apellidos: </span><asp:TextBox ID="txt_apellido" runat="server"></asp:TextBox></p>
                                     </div>
                                     <div class="bio-row">
-                                        <p><span>Cumpleaños </span>: 25 Marzo 1998</p>
+                                        <p><span>Cumpleaños: </span><asp:TextBox ID="txt_nacimiento" runat="server"></asp:TextBox></p>
                                     </div>
                                     <div class="bio-row">
-                                        <p><span>País </span>: Argentina</p>
+                                        <p><span>Email: </span><asp:TextBox ID="txt_mail" runat="server"></asp:TextBox></p>
                                     </div>
                                     <div class="bio-row">
-                                        <p><span>Email </span>: mateo@pagniez.com</p>
-                                    </div>
-                                    <div class="bio-row">
-                                        <p><span>Teléfono </span>: 15 6052 8202</p>
+                                        <p><span>Teléfono: </span><asp:TextBox ID="txt_tel" runat="server"></asp:TextBox></p>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section>
                             <div class="row">
+                                <asp:Button ID="btn_guardar" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="btn_guardar_Click" />
                             </div>
                         </section>
                     </div>
@@ -108,7 +106,7 @@
         <!--CONTENIDO end -->
 
 
-    </section>
+    </form>
     <!-- container section start -->
 
     <!-- javascripts -->

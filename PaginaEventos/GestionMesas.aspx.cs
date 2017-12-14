@@ -32,7 +32,7 @@ public partial class GestionMesas : System.Web.UI.Page
             string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
             if (imagen == null) imagen = "img/avatar2_small.jpg";
             string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
-            lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, 10, 20);
+            lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
             string nivelPer = per.CuentaEnEvento(Session["CodigoCuenta"].ToString(), Session["CodigoEvento"].ToString());
             if (nivelPer != "Creador" && nivelPer != "Administrador") Response.Redirect("GestionEvento.aspx");
             if (ad.ContarRegistros("select * from mesas where evento = " + Session["CodigoEvento"]) == 0)
