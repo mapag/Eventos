@@ -63,6 +63,11 @@ public partial class GestionMesas : System.Web.UI.Page
         Response.Redirect("GestionEvento.aspx");
     }
 
+    protected void btnVerMesas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("VerMesas.aspx");
+    }
+
     protected void btn_cambiarnombremesa_Click(object sender, EventArgs e)
     {
         if (txt_mesaactual.Text != "" && val.Alfanumerico(txt_mesaactual.Text) && ad.ContarRegistros("select * from mesas where nombre = '" + txt_mesaactual.Text + "' and evento = " + Session["CodigoEvento"]) == 0)

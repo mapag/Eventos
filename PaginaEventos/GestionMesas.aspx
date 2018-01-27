@@ -69,7 +69,9 @@
             </section>
             <section class="wrapperito">
                 <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-info" OnClick="btnVolver_Click">
-                                <i class="glyphicon glyphicon-chevron-left" style="margin-right: 10px;"></i>Volver</asp:LinkButton>
+                                <i class="fa fa-chevron-left" style="margin-right: 10px;"></i>Volver</asp:LinkButton>
+                <asp:LinkButton ID="btnVerMesas" runat="server" CssClass="btn btn-info" OnClick="btnVerMesas_Click">
+                                <i class="fa fa-sitemap" style="margin-right: 10px;"></i>Ver Mesas</asp:LinkButton>
                 <div class="wrapper cuadrito">
 
 

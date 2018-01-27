@@ -56,6 +56,7 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <asp:Button ID="btn_registrar" runat="server" Text="Invitar" class="btn btn-primary" OnClick="btn_registrar_Click"/>
+                        <asp:Button ID="btn_regresar" runat="server" Text="Volver" class="btn btn-primary" OnClick="btn_regresar_Click"/>
                     </div>
                 </div>
             </div>
