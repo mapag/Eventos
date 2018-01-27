@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GestionEvento.aspx.cs" Inherits="GestionEvento" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="VerMesas.aspx.cs" Inherits="VerMesas" %>
 
 <!DOCTYPE html>
 
@@ -57,57 +57,57 @@
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>Gestion del Evento</h3>
+                        <h3 class="page-header"><i class="fa fa-laptop"></i>Ver Mesas</h3>
                         <ol class="breadcrumb">
                             <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
                             <li><i class="fa fa-users"></i><a href="GestionEvento.aspx">Gestion Evento</a></li>
+                            <li><i class="fa fa-sitemap"></i><a href="VerMesas.aspx">Ver Mesas</a></li>
                         </ol>
                     </div>
                 </div>
             </section>
-            <!--
-            <section class="wrapper">
-                <h1 style="border: double rgba(54,66,74,1) 10px; text-align: center">Información del evento</h1>
-                <div class="row">
-                    <h1 class="col-lg-2"></h1>
-                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Descripción: </h1>
-                    <p  class="col-lg-4" style="margin-top: 20px; font-size:27px;  border: double rgba(54,66,74,1) 10px; text-align: center">1r evento creado desde la pagina CrearEvento.</p>
-                    <h1 class="col-lg-2"></h1>
-                </div>
-                <div class="row">
-                    <h1 class="col-lg-2"></h1>
-                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Fecha y Hora de Inicio: </h1>
-                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">13/12/2017 13:00 PM </h1>
-                    <h1 class="col-lg-2"></h1>
-                </div>
-                <div class="row">
-                    <h1 class="col-lg-2"></h1>
-                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">Fecha y Hora de Fin: </h1>
-                    <h1 class="col-lg-4" style="border: double rgba(54,66,74,1) 10px; text-align: center">17/12/2017 13:00 PM </h1>
-                    <h1 class="col-lg-2"></h1>
-                </div>
-            </section>
-                <-->
-            <section class="wrapper">
-                <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-bars" style="margin-right: 10px;"></i>Gestionar Mesas</asp:LinkButton>
-                <asp:LinkButton ID="btn_invitar" CssClass="btn btn-primary" PostBackUrl="~/CrearInvitacion.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Invitar a alguien</asp:LinkButton>
-                <asp:LinkButton ID="btn_mesas" CssClass="btn btn-primary" PostBackUrl="~/VerMesas.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-sitemap" style="margin-right: 10px;"></i>Ver Mesas</asp:LinkButton>
 
-                <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-                <asp:Button ID="btn_promocion" runat="server" CssClass="btn btn-info" Text="Promocionar a Administrador" OnClick="btn_promocion_Click" Visible="false" />
-                <asp:Button ID="btn_noinvitar" runat="server" CssClass="btn btn-danger" Text="Eliminar Invitación" OnClick="btn_noinvitar_Click" Visible="false" />
+            <section class="wrapper">
+
+                        <div class="col-sm-3">
+                            <div class="well">
+                                <h1 style="margin-bottom: 30px;">Mesa Principal</h1>
+                                <ul>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Mateo Pagniez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Lautaro Rodriguez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Gianfranco Lopez</li>
+                                </ul>
+                                
+                                <hr/>
+                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="well">
+                                <h1 style="margin-bottom: 30px;">Mesa 1</h1>
+                                <ul>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Gianfranco Lopez</li>
+                                </ul>
+                                
+                                <hr/>
+                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="well">
+                                <h1 style="margin-bottom: 30px;">Mesa 2</h1>
+                                <ul>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Mateo Pagniez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Lautaro Rodriguez</li>
+                                </ul>
+                                
+                                <hr/>
+                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
+                            </div>
+                        </div>
             </section>
 
             <!--CONTENIDO end -->

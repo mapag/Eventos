@@ -49,6 +49,11 @@ public partial class CrearInvitacion : System.Web.UI.Page
         }
     }
 
+    protected void btn_regresar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("GestionEvento.aspx");
+    }
+
     protected void Reiniciar_lbls()
     {
         lbl_apellido.ForeColor = lbl_email.ForeColor = lbl_error.ForeColor = lbl_nombre.ForeColor = Color.OrangeRed;

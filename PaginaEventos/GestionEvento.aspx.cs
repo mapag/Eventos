@@ -30,6 +30,7 @@ public partial class GestionEvento : System.Web.UI.Page
         {
             btn_gestionmesas.Visible = true;
             btn_invitar.Visible = true;
+            btn_mesas.Visible = true;
             if (nivelPer == "Creador")
             {
                 grd_invitados.AutoGenerateSelectButton = true;
