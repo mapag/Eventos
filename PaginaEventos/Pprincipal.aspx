@@ -127,7 +127,7 @@
             <div class="container-fluid p-0">
                 <div class="row no-gutters popup-gallery">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/5.jpg" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -142,10 +142,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/4.jpg" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -160,10 +160,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/32.jpg" alt=""/>
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -178,10 +178,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/8.jpg" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -196,10 +196,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/7.jpg" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -214,10 +214,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+                        <div class="portfolio-box">
                             <img class="img-fluid" src="img/landing/9.jpg" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
@@ -232,7 +232,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
