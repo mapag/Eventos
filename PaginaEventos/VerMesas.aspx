@@ -71,9 +71,9 @@
 
                         <div class="col-sm-3">
                             <div class="well">
-                                <h1 style="margin-bottom: 30px;">Mesa Principal</h1>
+                                <h1 style="margin-bottom: 30px;"><asp:Label ID="nombreMesa1" runat="server">Mesa Principal</asp:Label></h1>
                                 <ul>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
+                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i><asp:Label ID="nombreInvitado1" runat="server"> Jorge Lopez</asp:Label></li>
                                     <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Mateo Pagniez</li>
                                     <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Lautaro Rodriguez</li>
                                     <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Gianfranco Lopez</li>

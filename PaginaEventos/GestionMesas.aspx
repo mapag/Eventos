@@ -74,9 +74,6 @@
                                 <i class="fa fa-sitemap" style="margin-right: 10px;"></i>Ver Mesas</asp:LinkButton>
                 <div class="wrapper cuadrito">
 
-
-
-
                     <div class="col-lg-4">
                         <asp:TextBox ID="txt_nuevamesa" runat="server" class="form form-control" placeholder="Nombre la nueva mesa"></asp:TextBox>
 
