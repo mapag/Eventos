@@ -8,7 +8,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 using System.Net.Mail;
-
 public partial class CrearInvitacion : System.Web.UI.Page
 {
     Validaciones val = new Validaciones();
@@ -64,18 +63,12 @@ public partial class CrearInvitacion : System.Web.UI.Page
     {
         try
         {
-            MailMessage mail = new MailMessage();
+            MailMessage mail = new MailMessage("eventosmatlau@gmail.com", mailUsuario, "Invitación a EVENTO!", System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("mail/mail.html")));
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-            mail.From = new MailAddress("eventosmatlau@gmail.com");
-            mail.To.Add(mailUsuario);
-            mail.Subject = "Invitación a EVENTO!";
-            mail.Body = "Nos comunicamos con vos porque fuiste invitado a un nuevo evento en nuestra plataforma EV. Te recomendamos que entres y confirmes tu asistencia.";
-
+            mail.IsBodyHtml = true;
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("eventosmatlau", "mateolautaro");
             SmtpServer.EnableSsl = true;
-
             SmtpServer.Send(mail);
         }
         catch (Exception ex)

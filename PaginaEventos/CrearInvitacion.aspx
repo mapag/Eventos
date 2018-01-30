@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="img/favicon.png" />
 
     <title>Login - Eventos</title>
-    <link rel="icon" href="demo_icon.ico" sizes="72x72"/>
+    <link rel="icon" href="demo_icon.ico" sizes="72x72" />
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -31,38 +31,41 @@
     <div class="container">
         <form id="form1" runat="server" class="login-form">
             <div class="login-wrap">
-                <p class="login-img"></i>Invitar a:</p>
+                <p class="login-img">Invitar a:</p>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="first_name">Nombre</label>
                         <asp:Label ID="lbl_nombre" runat="server" Text=""></asp:Label>
-                        <asp:TextBox ID="txt_nombre" runat="server" class="form-control" placeholder="Nombre" ></asp:TextBox>
+                        <asp:TextBox ID="txt_nombre" runat="server" class="form-control" placeholder="Nombre"></asp:TextBox>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="last_name">Apellido</label>
                         <asp:Label ID="lbl_apellido" runat="server" Text=""></asp:Label>
-                        <asp:TextBox ID="txt_apellido" runat="server" class="form-control" placeholder="Apellido" ></asp:TextBox>
+                        <asp:TextBox ID="txt_apellido" runat="server" class="form-control" placeholder="Apellido"></asp:TextBox>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-group col-md-12">
                         <label for="">Email</label>
                         <asp:Label ID="lbl_email" runat="server" Text=""></asp:Label>
-                        <asp:TextBox ID="txt_email" runat="server" class="form-control" placeholder="Email" ></asp:TextBox>
+                        <asp:TextBox ID="txt_email" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
                     </div>
                 </fieldset>
-                <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
+                <div class="form-group">
+                    <div class="form-group col-md-12">
+                        <asp:Label ID="lbl_info" runat="server" CssClass="form-group" Text="*Si el correo es GMAIL, se le enviará un correo automatico."></asp:Label>
+                        <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <asp:Button ID="btn_registrar" runat="server" Text="Invitar" class="btn btn-primary" OnClick="btn_registrar_Click"/>
-                        <asp:Button ID="btn_regresar" runat="server" Text="Volver" class="btn btn-primary" OnClick="btn_regresar_Click"/>
+                        <asp:Button ID="btn_registrar" runat="server" Text="Invitar" class="btn btn-primary" OnClick="btn_registrar_Click" />
+                        <asp:Button ID="btn_regresar" runat="server" Text="Volver" class="btn btn-primary" OnClick="btn_regresar_Click" />
                     </div>
                 </div>
             </div>
         </form>
-        <p></p>     
     </div>
-
 </body>
 </html>
