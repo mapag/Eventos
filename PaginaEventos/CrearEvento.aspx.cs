@@ -64,12 +64,13 @@ public partial class CrearEvento : System.Web.UI.Page
                 lbl_error3.Text += " La fecha actual no puese ser posterior a la fecha de fin de evento.";
                 correcto = false;
             }
-            if (correcto) GenerarEvento();
+            if (correcto) GenerarEvento();//lbl_error4.Text = "No hay errores";//
         }
         catch (Exception ee)
         {
-            if( lbl_error1.Text == "" && lbl_error2.Text == "" && lbl_error3.Text == "" ){
-            lbl_error4.Text = "El evento no pudo ser agregado. Hubo un error de servidor.";
+            if (lbl_error1.Text == "" && lbl_error2.Text == "" && lbl_error3.Text == "")
+            {
+                lbl_error4.Text = "El evento no pudo ser agregado. Hubo un error de servidor.";
             }
         }
     }
@@ -80,8 +81,12 @@ public partial class CrearEvento : System.Web.UI.Page
 
     protected void GenerarEvento()
     {
+        DateTime diainicio = new DateTime();
+        DateTime diafin = new DateTime();
+        diainicio = DateTime.Parse(txt_dateinicio.Text);
+        diafin = DateTime.Parse(txt_datafin.Text);
         string id = ad.ObtenerValor("SELECT (MAX(codigo)+1) AS codigo FROM eventos");
-        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin, estado) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + txt_dateinicio.Text + " " + txt_timeinicio.Text + "', '" + txt_datafin.Text + " " + txt_timefin.Text + "', 0)";
+        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin, estado) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + diainicio.ToString("d-MM-yyyy") + " " + txt_timeinicio.Text + "', '" + diafin.ToString("d-MM-yyyy") + " " + txt_timefin.Text + "', 0)";
         string consultaSQL2 = "insert into evento_por_cuenta (evento, cuenta, perfil, estado, confirmacion) values (" + id + ", " + Session["CodigoCuenta"] + ", 1, 0, 1)";
         ad.EjecutarConsulta(consultaSQL);
         ad.EjecutarConsulta(consultaSQL2);
