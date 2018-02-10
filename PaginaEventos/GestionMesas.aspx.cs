@@ -55,7 +55,7 @@ public partial class GestionMesas : System.Web.UI.Page
         ddl_invitados.Items.Clear();
         lbl_mesa.Text = ad.ObtenerValor("select nombre from mesas where codigo = " + mesa);
         ad.AgregaraListBoxIDyVAL(ref lst_mesa, "select cpm.cuenta, c.nombre + ' ' + c.apellido as nombre from cuenta_por_mesa cpm inner join cuentas c on c.codigo = cpm.cuenta where cpm.mesa = " + mesa);
-        ad.AgregaraDropDownListIDyVAL(ref ddl_invitados, "select epc.cuenta, c.nombre + ' ' + c.apellido as nombre from evento_por_cuenta epc inner join cuentas c on c.codigo = epc.cuenta left join cuenta_por_mesa cpm on c.codigo = cpm.cuenta where epc.evento = " + Session["CodigoEvento"] + " and c.codigo not in ( select cpm.cuenta from cuenta_por_mesa cpm  inner join evento_por_cuenta epc on cpm.cuenta = epc.cuenta where epc.evento = " + Session["CodigoEvento"] + ")");
+        ad.AgregaraListBoxIDyVAL(ref ddl_invitados, "select epc.cuenta, c.nombre + ' ' + c.apellido as nombre from evento_por_cuenta epc inner join cuentas c on c.codigo = epc.cuenta left join cuenta_por_mesa cpm on c.codigo = cpm.cuenta where epc.evento = " + Session["CodigoEvento"] + " and c.codigo not in ( select cpm.cuenta from cuenta_por_mesa cpm  inner join evento_por_cuenta epc on cpm.cuenta = epc.cuenta where epc.evento = " + Session["CodigoEvento"] + ")");
     }
 
     protected void btnVolver_Click(object sender, EventArgs e)

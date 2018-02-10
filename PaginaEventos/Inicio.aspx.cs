@@ -12,10 +12,11 @@ public partial class Inicio : System.Web.UI.Page
     Cabecera cabecera = new Cabecera();
     AccesoDatos ad = new AccesoDatos();
     GestorObjetosWeb go = new GestorObjetosWeb();
+    Permisos pe = new Permisos();
     DataTable dt;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
+        //if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
         if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
         string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
         if (imagen == null) imagen = "img/avatar2_small.jpg";
@@ -36,8 +37,17 @@ public partial class Inicio : System.Web.UI.Page
 
     protected void BorrarFila(object sender, GridViewDeleteEventArgs e)
     {
-        Session["CodigoEvento"] = grd_eventos.Rows[e.RowIndex].Cells[2].Text;
-        Response.Redirect("ConfirmarBorrarEvento.aspx");
+        int codDueno = Int32.Parse(pe.DuenoCuenta(Int32.Parse(grd_eventos.Rows[e.RowIndex].Cells[2].Text), Int32.Parse(Session["CodigoCuenta"].ToString())));
+
+        if (codDueno == 1)
+        {
+            Session["CodigoEvento"] = grd_eventos.Rows[e.RowIndex].Cells[2].Text;
+            Response.Redirect("ConfirmarBorrarEvento.aspx");
+        }
+        else
+        {
+            noBorrar.Text = "No se puede borrar el evento. \n Solo el CREADOR puede borrar este evento.";
+        }
     }
     protected void EditarFila(object sender, EventArgs e)
     {

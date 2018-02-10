@@ -116,7 +116,7 @@
                                 <asp:Button ID="btn_agregar" runat="server" Text="<< SENTAR <<" CssClass="btn btn-primary" OnClick="btn_agregar_Click" />
                                 <asp:Button ID="btn_quitar" runat="server" Text=">> LEVANTAR >>" CssClass="btn btn-primary" OnClick="btn_quitar_Click" /></td>
                             <td>
-                                <asp:DropDownList ID="ddl_invitados" runat="server" CssClass="form form-control"></asp:DropDownList></td>
+                                <asp:ListBox ID="ddl_invitados" runat="server" CssClass="form form-control listboxlargo" style="margin-top: 20px;"></asp:ListBox></td>
                         </tr>
                     </table>
             </section>

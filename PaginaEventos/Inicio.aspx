@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="img/favicon.png" />
 
     <title>Eventos.-</title>
-    <link rel="icon" href="demo_icon.ico" sizes="72x72"/>
+    <link rel="icon" href="demo_icon.ico" sizes="72x72" />
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -69,7 +69,9 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box blue-bg">
                             <i class="fa fa-calendar"></i>
-                            <div class="count"><asp:Label ID="lbl_EventosActivos" runat="server" Text="30"></asp:Label></div>
+                            <div class="count">
+                                <asp:Label ID="lbl_EventosActivos" runat="server" Text="30"></asp:Label>
+                            </div>
                             <div class="title">Eventos Activos</div>
                         </div>
                     </div>
@@ -77,7 +79,9 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box dark-bg">
                             <i class="fa fa-calendar"></i>
-                            <div class="count"><asp:Label ID="lbl_EventosTotales" runat="server" Text="50"></asp:Label></div>
+                            <div class="count">
+                                <asp:Label ID="lbl_EventosTotales" runat="server" Text="50"></asp:Label>
+                            </div>
                             <div class="title">Eventos Totales</div>
                         </div>
                     </div>
@@ -85,7 +89,9 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box brown-bg">
                             <i class="fa fa-user"></i>
-                            <div class="count"><asp:Label ID="lbl_ClientesActivos" runat="server" Text="70"></asp:Label></div>
+                            <div class="count">
+                                <asp:Label ID="lbl_ClientesActivos" runat="server" Text="70"></asp:Label>
+                            </div>
                             <div class="title">Clientes Activos</div>
                         </div>
                     </div>
@@ -93,7 +99,9 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="info-box green-bg">
                             <i class="fa fa-user"></i>
-                            <div class="count"><asp:Label ID="lbl_ClientesTotales" runat="server" Text="90"></asp:Label></div>
+                            <div class="count">
+                                <asp:Label ID="lbl_ClientesTotales" runat="server" Text="90"></asp:Label>
+                            </div>
                             <div class="title">Clientes Totales</div>
                         </div>
                     </div>
@@ -101,13 +109,13 @@
             </section>
             <section class="wrapper">
                 <div>
-                    <asp:LinkButton ID="btn_CrearEvento" class="btn btn-primary btn-lg" style="margin-bottom: 30px;" OnClick="btn_CrearEvento_Click" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Crear Evento</asp:LinkButton>
-                    </div>
+                    <asp:LinkButton ID="btn_CrearEvento" class="btn btn-primary btn-lg" Style="margin-bottom: 30px;" OnClick="btn_CrearEvento_Click" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Crear Evento</asp:LinkButton>
+                </div>
                 <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="BorrarFila" OnSelectedIndexChanged="EditarFila">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:CommandField ButtonType="Button" ShowSelectButton="true" ControlStyle-CssClass="btn btn-info"/>
-                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger"/>
+                        <asp:CommandField ButtonType="Button" ShowSelectButton="true" ControlStyle-CssClass="btn btn-info" />
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
@@ -120,6 +128,8 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
+
+                <asp:Label ID="noBorrar" runat="server" Text=""></asp:Label>
             </section>
         </section>
         <!--CONTENIDO end -->
