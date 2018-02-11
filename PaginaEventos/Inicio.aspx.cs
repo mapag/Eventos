@@ -23,7 +23,7 @@ public partial class Inicio : System.Web.UI.Page
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
         lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
         GenerarTabla();
-        lbl_EventosActivos.Text = ad.ObtenerValor("select COUNT(codigo) from eventos where estado = 1");
+        lbl_EventosActivos.Text = ad.ObtenerValor("select COUNT(codigo) from eventos where estado = 0");
         lbl_EventosTotales.Text = ad.ObtenerValor("select COUNT(codigo) from eventos");
         lbl_ClientesTotales.Text = ad.ObtenerValor("select COUNT(codigo) from cuentas");
         lbl_ClientesActivos.Text = ad.ObtenerValor("select COUNT(distinct evento_por_cuenta.cuenta) from evento_por_cuenta inner join eventos on evento_por_cuenta.evento = eventos.codigo where evento_por_cuenta.confirmacion = 1 and eventos.estado = 0");
