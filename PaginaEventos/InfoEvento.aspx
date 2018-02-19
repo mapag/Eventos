@@ -7,9 +7,6 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template" />
-    <meta name="author" content="GeeksLabs" />
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
     <link rel="shortcut icon" href="img/favicon.png" />
 
     <title>Eventos.-</title>
@@ -27,9 +24,6 @@
     <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
     <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
-    <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
-    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link href="css/widgets.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
@@ -37,6 +31,7 @@
     <link href="css/xcharts.min.css" rel=" stylesheet" />
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet" />
     <link href="css/styleGestionEvento.css" rel="stylesheet" />
+
 
 </head>
 <body>
@@ -47,7 +42,7 @@
         <!--CABECERA end-->
 
         <script src="Login.aspx"></script>
-        
+
         <!--BARRA LATERAL start
         <script src="js/barraLateral.js"></script>
         BARRA LATERAL end-->
@@ -71,33 +66,29 @@
 
             <section class="wrapper">
 
-                <div class="col-sm-3">
-                    <div class="well">
-                        <h1 style="margin-bottom: 30px;">
-                            <asp:Label ID="nombreMesa1" runat="server"></asp:Label></h1>
-                        <ul>
-                            <li style="font-size: 20px;">Dasdasd<i class="fa fa-check-square"></i>
-                                <asp:Label ID="nombreInvitado1" runat="server"> Jorge Lopez</asp:Label></li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i>Mateo Pagniez</li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square"></i>Lautaro Rodriguez</li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i>Gianfranco Lopez</li>
-                        </ul>
-
-                        <hr />
-                        <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                    </div>
+                <div class="col-lg-3">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Invitados Confirmados
+                        </header>
+                        <div class="panel-body text-center">
+                            <canvas id="pie" height="300" width="400"></canvas>
+                        </div>
+                    </section>
                 </div>
-                <div class="col-sm-3">
-                    <div class="well">
-                        <h1 style="margin-bottom: 30px;">Mesa 1</h1>
-                        <ul>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square"></i>Jorge Lopez</li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i>Gianfranco Lopez</li>
-                        </ul>
-
-                        <hr />
-                        <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                    </div>
+                <div class="col-lg-3">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Faltan Confirmar:
+                        </header>
+                        <div class="panel-body text-center">
+                            <ul style="text-align: left; font-size: 20px;">
+                                <li>Jorge Lopez</li>
+                                <li>Mateo Pagniez</li>
+                                <li>Lautaro Rodriguez</li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
                 <div class="col-sm-3">
                     <div class="well">
@@ -119,6 +110,8 @@
         <!-- container section start -->
     </form>
     <!-- javascripts -->
+    <script src="assets/chart-master/Chart.js"></script>
+    <!-- custom chart script for this page only-->
     <script src="js/allscripts.js"></script>
     <script>
         //knob
@@ -128,17 +121,6 @@
                     $(this.i).val(this.cv + '%')
                 }
             })
-        });
-
-        //carousel
-        $(document).ready(function () {
-            $("#owl-slider").owlCarousel({
-                navigation: true,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                singleItem: true
-
-            });
         });
 
         //custom select box
@@ -163,6 +145,22 @@
                     el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
                 }
             });
+        });
+
+        //pie
+        $(document).ready(function () {
+
+
+            var pieData = [
+        {
+            value: 23,
+            color: "#3f9c35"
+        },
+        {
+            value: 7,
+            color: "#cc0000"
+        }];
+            new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
         });
     </script>
 </body>
