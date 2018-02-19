@@ -92,6 +92,7 @@
                 <asp:LinkButton ID="btn_gestionmesas" CssClass="btn btn-primary" PostBackUrl="~/GestionMesas.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-bars" style="margin-right: 10px;"></i>Gestionar Mesas</asp:LinkButton>
                 <asp:LinkButton ID="btn_invitar" CssClass="btn btn-primary" PostBackUrl="~/CrearInvitacion.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-plus" style="margin-right: 10px;"></i>Invitar a alguien</asp:LinkButton>
                 <asp:LinkButton ID="btn_mesas" CssClass="btn btn-primary" PostBackUrl="~/VerMesas.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-sitemap" style="margin-right: 10px;"></i>Ver Mesas</asp:LinkButton>
+                <asp:LinkButton ID="btn_info" CssClass="btn btn-primary" PostBackUrl="~/InfoEvento.aspx" Style="margin-bottom: 20px" Visible="false" runat="server"><i class="fa fa-info-circle" style="margin-right: 10px;"></i>Información</asp:LinkButton>
 
                 <asp:GridView ID="grd_invitados" runat="server" CssClass="table" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grd_invitados_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" />
@@ -108,6 +109,8 @@
                 </asp:GridView>
                 <asp:Button ID="btn_promocion" runat="server" CssClass="btn btn-info" Text="Promocionar a Administrador" OnClick="btn_promocion_Click" Visible="false" />
                 <asp:Button ID="btn_noinvitar" runat="server" CssClass="btn btn-danger" Text="Eliminar Invitación" OnClick="btn_noinvitar_Click" Visible="false" />
+                <asp:Button ID="btn_confirmar" runat="server" CssClass="btn btn-primary" Text="Confirmar/Anular Asistencia" OnClick="btn_confirmar_Click" Visible="false" />
+
             </section>
 
             <!--CONTENIDO end -->

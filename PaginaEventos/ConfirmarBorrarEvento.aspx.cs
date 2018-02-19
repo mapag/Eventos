@@ -15,7 +15,7 @@ public partial class ConfirmarBorrarEvento : System.Web.UI.Page
         if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
         if (Session["CodigoEvento"] == null) Response.Redirect("Pprincipal.aspx");
         if (perm.CuentaEnEvento(Session["CodigoCuenta"].ToString(), Session["CodigoEvento"].ToString()) != "Creador") Response.Redirect("Pprincipal.aspx");
-        lbl_confirm.Text = "Esta a punto de eliminar el registro " + Session["CodigoEvento"] + ". ¿Está usted seguro? \n Escriba BORRAR y presione el botón para confirmar.";
+        lbl_confirm.Text = "Esta a punto de eliminar el registro '" + Session["NombreEvento"] + "'. <br/> <br/> ¿Está usted seguro? <br/> <br/> Escriba BORRAR y presione el botón para confirmar.";
         lbl_confirm.ForeColor = Color.OrangeRed;
     }
     protected void btn_regresar_Click(object sender, EventArgs e)

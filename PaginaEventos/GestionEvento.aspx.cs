@@ -31,12 +31,13 @@ public partial class GestionEvento : System.Web.UI.Page
             btn_gestionmesas.Visible = true;
             btn_invitar.Visible = true;
             btn_mesas.Visible = true;
+            btn_info.Visible = true;
             if (nivelPer == "Creador")
             {
                 grd_invitados.AutoGenerateSelectButton = true;
             }
         }
-        dt = ad.ObtenerTabla("invitados", "select c.apellido + ' ' + c.nombre as Nombre, c.mail as 'Correo Electrónico', c.telefono as Teléfono, p.descripcion as 'Su rol', (case epc.confirmacion when 1 then 'Si' when 0 then 'No' end) as 'Confirmación' from cuentas c inner join evento_por_cuenta epc on epc.cuenta = c.codigo inner join perfiles p on p.codigo = epc.perfil where epc.evento = " + Session["CodigoEvento"] + "order by epc.perfil asc, c.apellido asc");
+        dt = ad.ObtenerTabla("invitados", "select c.codigo, c.apellido + ' ' + c.nombre as Nombre, c.mail as 'Correo Electrónico', c.telefono as Teléfono, p.descripcion as 'Su rol', (case epc.confirmacion when 1 then 'Si' when 0 then 'No' end) as 'Confirmación' from cuentas c inner join evento_por_cuenta epc on epc.cuenta = c.codigo inner join perfiles p on p.codigo = epc.perfil where epc.evento = " + Session["CodigoEvento"] + "order by epc.perfil asc, c.apellido asc");
         go.MostrarGrid(ref grd_invitados, dt);
     }
     protected void btn_promocion_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ public partial class GestionEvento : System.Web.UI.Page
     {
         btn_promocion.Visible = true;
         btn_noinvitar.Visible = true;
+        btn_confirmar.Visible = true;
         if (dt.Rows[grd_invitados.SelectedIndex][3].ToString() == "Invitado") btn_promocion.Text = "Promocionar a administrador";
         else if (dt.Rows[grd_invitados.SelectedIndex][3].ToString() == "Administrador")
         {
@@ -60,6 +62,7 @@ public partial class GestionEvento : System.Web.UI.Page
         {
             btn_promocion.Visible = false;
             btn_noinvitar.Visible = false;
+            btn_confirmar.Visible = false;
         }
     }
     protected void btn_noinvitar_Click(object sender, EventArgs e)
@@ -67,5 +70,10 @@ public partial class GestionEvento : System.Web.UI.Page
         ad.EjecutarConsulta("delete from evento_por_cuenta where cuenta = (select codigo from cuentas where mail = '" + dt.Rows[grd_invitados.SelectedIndex][1].ToString() + "') and evento = " + Session["CodigoEvento"] );
         Response.Redirect("GestionEvento.aspx");
         // Eliminarlo tambien de la mesa en la que este colocado.
+    }
+    protected void btn_confirmar_Click(object sender, EventArgs e)
+    {
+        ad.EjecutarConsulta("Update evento_por_cuenta set confirmacion = case when confirmacion = 0 then 1 else 0 end where evento = " + Session["CodigoEvento"] + " and cuenta = '" + dt.Rows[grd_invitados.SelectedIndex][0].ToString() + "'");
+        Response.Redirect("GestionEvento.aspx");
     }
 }

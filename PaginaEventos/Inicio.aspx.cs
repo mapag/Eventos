@@ -42,6 +42,7 @@ public partial class Inicio : System.Web.UI.Page
         if (codDueno == 1)
         {
             Session["CodigoEvento"] = grd_eventos.Rows[e.RowIndex].Cells[2].Text;
+            Session["NombreEvento"] = grd_eventos.Rows[e.RowIndex].Cells[3].Text;
             Response.Redirect("ConfirmarBorrarEvento.aspx");
         }
         else
