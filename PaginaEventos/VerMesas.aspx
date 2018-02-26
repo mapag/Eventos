@@ -46,12 +46,6 @@
         <!--CABECERA end-->
 
         <script src="Login.aspx"></script>
-        <!--BARRA LATERAL start-->
-        <script src="js/barraLateral.js"></script>
-        <!--BARRA LATERAL end-->
-
-
-
         <!--CONTENIDO start -->
         <section id="main-content">
             <section class="wrapper">
@@ -66,48 +60,8 @@
                     </div>
                 </div>
             </section>
-
             <section class="wrapper">
-
-                        <div class="col-sm-3">
-                            <div class="well">
-                                <h1 style="margin-bottom: 30px;"><asp:Label ID="nombreMesa1" runat="server">Mesa Principal</asp:Label></h1>
-                                <ul>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i><asp:Label ID="nombreInvitado1" runat="server"> Jorge Lopez</asp:Label></li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Mateo Pagniez</li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Lautaro Rodriguez</li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Gianfranco Lopez</li>
-                                </ul>
-                                
-                                <hr/>
-                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="well">
-                                <h1 style="margin-bottom: 30px;">Mesa 1</h1>
-                                <ul>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Gianfranco Lopez</li>
-                                </ul>
-                                
-                                <hr/>
-                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="well">
-                                <h1 style="margin-bottom: 30px;">Mesa 2</h1>
-                                <ul>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Jorge Lopez</li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i> Mateo Pagniez</li>
-                                    <li style="font-size: 20px;"><i class="fa fa-check-square"></i> Lautaro Rodriguez</li>
-                                </ul>
-                                
-                                <hr/>
-                                <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                            </div>
-                        </div>
+                <asp:Label ID="lbl_mesas" runat="server" Text=""></asp:Label>
             </section>
 
             <!--CONTENIDO end -->
