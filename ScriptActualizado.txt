@@ -1,6 +1,6 @@
 USE [Eventos]
 GO
-/****** Object:  Table [dbo].[vehiculos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[vehiculos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23,7 +23,7 @@ CREATE TABLE [dbo].[vehiculos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[tipos_eventos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[tipos_eventos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,7 +45,7 @@ SET IDENTITY_INSERT [dbo].[tipos_eventos] ON
 INSERT [dbo].[tipos_eventos] ([codigo], [descripcion]) VALUES (6, N'Ceremonia/Fiesta/Combite')
 INSERT [dbo].[tipos_eventos] ([codigo], [descripcion]) VALUES (7, N'Viaje')
 SET IDENTITY_INSERT [dbo].[tipos_eventos] OFF
-/****** Object:  Table [dbo].[provincias]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[provincias]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2099,7 +2099,7 @@ INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2194, N'Gyeongsan
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2195, N'Gyeongsangnam', 69)
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2196, N'Jeju', 69)
 INSERT [dbo].[provincias] ([codigo], [nombre], [pais]) VALUES (2201, N'Delhi', 25)
-/****** Object:  Table [dbo].[permisos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[permisos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2116,7 +2116,7 @@ CREATE TABLE [dbo].[permisos](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[perfiles]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[perfiles]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2139,7 +2139,7 @@ INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (1, N'Creador')
 INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (2, N'Administrador')
 INSERT [dbo].[perfiles] ([codigo], [descripcion]) VALUES (3, N'Invitado')
 SET IDENTITY_INSERT [dbo].[perfiles] OFF
-/****** Object:  Table [dbo].[paises]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[paises]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2375,7 +2375,7 @@ INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (241, N'Wallis y Futuna')
 INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (242, N'Sáhara Occidental')
 INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (243, N'Yemen')
 INSERT [dbo].[paises] ([codigo], [nombre]) VALUES (246, N'Puerto Rico')
-/****** Object:  Table [dbo].[modulos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[modulos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2394,7 +2394,7 @@ CREATE TABLE [dbo].[modulos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[mesas]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[mesas]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2414,14 +2414,11 @@ GO
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[mesas] ON
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (2, N'mesa 1', 1)
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (3, N'Mesa1', 6)
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (4, N'Mesa2', 6)
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (5, N'Mesa3', 6)
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (6, N'Mesita1', 6)
-INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (7, N'mesa1', 7)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (11, N'mesa1', 2)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (12, N'MesaA', 3)
+INSERT [dbo].[mesas] ([codigo], [nombre], [evento]) VALUES (13, N'MesaB', 3)
 SET IDENTITY_INSERT [dbo].[mesas] OFF
-/****** Object:  Table [dbo].[locales]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[locales]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2442,7 +2439,7 @@ CREATE TABLE [dbo].[locales](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[eventos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[eventos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2464,15 +2461,9 @@ CREATE TABLE [dbo].[eventos](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (1, N'una fiesta en casa', 6, CAST(0x0000A89700D63BC0 AS DateTime), CAST(0x0000A89700D63BC0 AS DateTime), 0)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (2, N'Una fiesta', 6, NULL, NULL, 0)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (3, N'', 6, CAST(0x0000000000000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 1)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (4, N'', 6, CAST(0x0000000000000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 1)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (5, N'', 6, CAST(0x0000000000000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 1)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (6, N'1r evento creado desde la pagina CrearEvento.', 6, CAST(0x0000A80A00000000 AS DateTime), CAST(0x0000BA9600000000 AS DateTime), 0)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (7, N'Viaje Al centro de la tierra', 7, CAST(0x0000A88200000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 0)
-INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (8, N'Viaje a cuba', 7, CAST(0x0000AA0500000000 AS DateTime), CAST(0x0000000000000000 AS DateTime), 0)
-/****** Object:  Table [dbo].[evento_por_cuenta]    Script Date: 12/13/2017 21:16:10 ******/
+INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (1, N'Evento Prueba', 1, CAST(0x00008EAC00000000 AS DateTime), NULL, 0)
+INSERT [dbo].[eventos] ([codigo], [descripcion], [tipo], [inicio], [fin], [estado]) VALUES (2, N'Evento A', 6, CAST(0x0000A89500000000 AS DateTime), CAST(0x0000A89500000000 AS DateTime), 0)
+/****** Object:  Table [dbo].[evento_por_cuenta]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2490,19 +2481,10 @@ CREATE TABLE [dbo].[evento_por_cuenta](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (3, 1, 1, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (4, 1, 1, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (5, 1, 1, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 1, 1, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 4, 3, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 5, 2, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 8, 3, NULL, 0)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 9, 3, NULL, 0)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (6, 10, 3, NULL, 0)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (7, 1, 1, 0, 1)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (7, 12, 3, NULL, 0)
-INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (8, 1, 1, 0, 1)
-/****** Object:  Table [dbo].[direcciones]    Script Date: 12/13/2017 21:16:10 ******/
+INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (1, 1, 0, 1, 1)
+INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (2, 14, 1, 0, 1)
+INSERT [dbo].[evento_por_cuenta] ([evento], [cuenta], [perfil], [estado], [confirmacion]) VALUES (2, 16, 3, NULL, 0)
+/****** Object:  Table [dbo].[direcciones]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2524,7 +2506,7 @@ CREATE TABLE [dbo].[direcciones](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[cuentas]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[cuentas]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2552,17 +2534,11 @@ GO
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[cuentas] ON
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (1, N'123', N'aaaa', N'Lautaro', N'Rodriguez', N'lautarohrodriguez@gmail.com', N'15151515', N'img/avatar2_small.jpg', N'http://mlm-s2-p.mlstatic.com/712111-MLM20494376871_112015-O.jpg                                                                                                                                         ', CAST(0x24180B00 AS Date), N'La caca huele feo')
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (4, N'123', NULL, N'Papa', N'Salada', N'papa@salada.com', NULL, NULL, NULL, CAST(0x24180B00 AS Date), NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (5, N'123', NULL, N'Papa2', N'Salada', N'papa2@salada.com', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (7, N'123', NULL, N'Mateo', N'Pagniez', N'mateopag98@gmail.com', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (8, NULL, NULL, N'Panama', N'Eldelbar', N'panama@gmail.com', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (9, N'1234', NULL, N'Fredo', N'ElPanadero', N'lospanes@pansito.com', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (10, NULL, NULL, N'Porsiaca', N'El forense', N'forense@losmuertos.com.ar', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (11, NULL, NULL, N'pedro', N'Eldelbar', N'fauso@gmail.com', NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (12, NULL, NULL, N'Mateo', N'Pagniez', N'mateo_pag@gmail.com', NULL, NULL, NULL, NULL, NULL)
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (1, N'utnfrgp', NULL, N'Administrador', N'-', N'utnfrgp', NULL, NULL, NULL, NULL, NULL)
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (14, N'123', NULL, N'Lautaro', N'Rodriguez', N'lautarohrodriguez@gmail.com', N'11111', N'\img\lautaro.jpg', N'https://s-media-cache-ak0.pinimg.com/originals/15/24/41/152441013c585ca617d11da41011b4d2.jpg                                                                                                            ', CAST(0x24180B00 AS Date), N'19414')
+INSERT [dbo].[cuentas] ([codigo], [contrasena], [cod_ingreso], [nombre], [apellido], [mail], [telefono], [imagen], [imagen2], [fechanac], [frase]) VALUES (16, NULL, NULL, N'Mateo', N'Pagniez', N'mateopag98@gmail.com', NULL, NULL, NULL, NULL, NULL)
 SET IDENTITY_INSERT [dbo].[cuentas] OFF
-/****** Object:  Table [dbo].[cuenta_por_mesa]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[cuenta_por_mesa]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2577,11 +2553,9 @@ CREATE TABLE [dbo].[cuenta_por_mesa](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (1, 3)
-INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (4, 4)
-INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (8, 3)
-INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (10, 5)
-/****** Object:  Table [dbo].[ciudades]    Script Date: 12/13/2017 21:16:10 ******/
+INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (14, 11)
+INSERT [dbo].[cuenta_por_mesa] ([cuenta], [mesa]) VALUES (16, 11)
+/****** Object:  Table [dbo].[ciudades]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2601,7 +2575,7 @@ CREATE TABLE [dbo].[ciudades](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[asientos]    Script Date: 12/13/2017 21:16:10 ******/
+/****** Object:  Table [dbo].[asientos]    Script Date: 02/27/2018 17:09:16 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
