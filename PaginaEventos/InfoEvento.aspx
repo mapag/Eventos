@@ -65,7 +65,8 @@
             </section>
 
             <section class="wrapper">
-                <asp:HiddenField ID="HiddenField1" runat="server" /> 
+                <asp:HiddenField ID="Confirmados" runat="server" />
+                <asp:HiddenField ID="NoConfirmados" runat="server" /> 
                 <div class="col-lg-4">
                     <section class="panel">
                         <header class="panel-heading">
@@ -149,15 +150,15 @@
 
         //pie
         $(document).ready(function () {
-            var sValue = parseInt(document.getElementById('HiddenField1').value);
-
+            var confirmados = parseInt(document.getElementById('Confirmados').value);
+            var noconfirmados = parseInt(document.getElementById('NoConfirmados').value);
             var pieData = [
         {
-            value: sValue,
+            value: confirmados,
             color: "#3f9c35"
         },
         {
-            value: 7,
+            value: noconfirmados,
             color: "#cc0000"
         }];
             new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
