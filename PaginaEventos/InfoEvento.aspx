@@ -65,7 +65,7 @@
             </section>
 
             <section class="wrapper">
-
+                <asp:HiddenField ID="HiddenField1" runat="server" /> 
                 <div class="col-lg-4">
                     <section class="panel">
                         <header class="panel-heading">
@@ -149,11 +149,11 @@
 
         //pie
         $(document).ready(function () {
-
+            var sValue = parseInt(document.getElementById('HiddenField1').value);
 
             var pieData = [
         {
-            value: 23,
+            value: sValue,
             color: "#3f9c35"
         },
         {

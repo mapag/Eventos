@@ -17,5 +17,6 @@ public partial class InfoEvento : System.Web.UI.Page
         if (imagen == null) imagen = "img/avatar2_small.jpg";
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
         lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
+        HiddenField1.Value = "100";
     }
 }
