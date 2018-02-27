@@ -39,11 +39,6 @@
         <!--CABECERA end-->
 
         <script src="Login.aspx"></script>
-        <!--BARRA LATERAL start-->
-        <script src="js/barraLateral.js"></script>
-        <!--BARRA LATERAL end-->
-
-
 
         <!--CONTENIDO start -->
         <section id="main-content">
