@@ -55,7 +55,7 @@ public partial class CrearEvento : System.Web.UI.Page
                 lbl_error3.Text = "La fecha de inicio no puede ser anterior a la fecha actual.";
                 correcto = false;
             }
-            if (txt_datafin.Text != "" && DateTime.Compare(fechainicio, fechafin) < 0)
+            if (txt_datafin.Text != "" && DateTime.Compare(fechainicio, fechafin) > 0)
             {
                 lbl_error3.Text += " La fecha actual no puese ser posterior a la fecha de fin de evento.";
                 correcto = false;
