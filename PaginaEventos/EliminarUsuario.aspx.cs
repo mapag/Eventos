@@ -18,7 +18,7 @@ public partial class EliminarUsuario : System.Web.UI.Page
     }
     protected void btn_regresar_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Inicio.aspx");
+        Response.Redirect("Administrador.aspx");
     }
     protected void btn_confirm_Click(object sender, EventArgs e)
     {
