@@ -37,6 +37,9 @@ public class Cabecera
                             "<ul class='dropdown-menu extended logout'>" +
                             "<div class='log-arrow-up'></div>" +
                             "<li class='eborder-top'>" +
+                                "<a href='Administrador.aspx'><i class='icon_briefcase'></i>ADMINISTRADOR</a>" +
+                            "</li>" + 
+                            "<li class='eborder-top'>" +
                                 "<a href='Miperfil.aspx'><i class='icon_profile'></i>Mi Perfil</a>" +
                             "</li>" +
                             "<li>" +
