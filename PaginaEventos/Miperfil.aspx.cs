@@ -28,6 +28,8 @@ public partial class Miperfil : System.Web.UI.Page
             txt_apellido.Text = dt.Rows[0][3].ToString();
             txt_mail.Text = dt.Rows[0][4].ToString();
             txt_tel.Text = dt.Rows[0][5].ToString();
+            txt_abatar.Text = dt.Rows[0][6].ToString();
+            txt_cartel.Text = dt.Rows[0][7].ToString();
             img_grande.Text = "<img align='left' class='fb-image-lg' src='" + dt.Rows[0][7].ToString() + "' /> ";
             string[] fecha = dt.Rows[0][8].ToString().Split(' ');
             img_pequena.Text = "<img align='left' class='fb-image-profile thumbnail' src='" + dt.Rows[0][6].ToString() + "' />";
@@ -37,6 +39,6 @@ public partial class Miperfil : System.Web.UI.Page
     }
     protected void btn_guardar_Click(object sender, EventArgs e)
     {
-        ad.EjecutarConsulta("Update cuentas set nombre = '" + txt_nombre.Text + "', apellido = '" + txt_apellido.Text + "', mail = '" + txt_mail.Text + "', telefono = '" + txt_tel.Text + "', fechanac = '" + txt_nacimiento.Text + "', frase = '" + txt_frase.Text + "' where codigo = "+ Session["CodigoCuenta"]);
+        ad.EjecutarConsulta("Update cuentas set nombre = '" + txt_nombre.Text + "', apellido = '" + txt_apellido.Text + "', mail = '" + txt_mail.Text + "', telefono = '" + txt_tel.Text + "', fechanac = '" + txt_nacimiento.Text + "', frase = '" + txt_frase.Text + "', imagen = '" + txt_abatar.Text + "', imagen2 = '" + txt_cartel.Text + "' where codigo = "+ Session["CodigoCuenta"]);
     }
 }

@@ -133,8 +133,11 @@
 
             <section class="wrapper">
                 <h1>Eventos</h1>
-                <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="BorrarFila" OnSelectedIndexChanged="EditarFila">
+                <asp:GridView ID="grd_eventos" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="grd_eventos_RowDeleting">
                     <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger" />
+                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
                     <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#000000" />
@@ -152,8 +155,11 @@
 
             <section class="wrapper">
                 <h1>Clientes</h1>
-                <asp:GridView ID="grd_clientes" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom">
+                <asp:GridView ID="grd_clientes" runat="server" class="table table-responsive" CellPadding="4" GridLines="None" ForeColor="#333333" PageSize="4" CaptionAlign="Bottom" OnRowDeleting="grd_clientes_RowDeleting">
                     <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger" />
+                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
                     <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="#000000" />
@@ -166,7 +172,7 @@
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
 
-                <asp:Label ID="noBorrarCli" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblPrueba" runat="server" Text=""></asp:Label>
             </section>
         </section>
         <!--CONTENIDO end -->

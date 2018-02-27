@@ -21,9 +21,9 @@ public class Cabecera
 
     public string GenerarCabecera(string img_usuario, string nombre_usuario, int cant_invitaciones){
         String cabecera;
-        cabecera = 
+        cabecera =
           "<header class='header dark-bg'>" +
-            
+
             //<!--logo start-->
             "<a href='Inicio.aspx' class='logo'>EV <span class='lite'>ENTOS</span></a>" +
             //<!--logo end-->
@@ -35,10 +35,12 @@ public class Cabecera
                             "<span class='profile-ava'><img src='" + img_usuario + "' alt='' /></span>" +
                             "<span class='username'>" + nombre_usuario + "</span><b class='caret'></b></a>" +
                             "<ul class='dropdown-menu extended logout'>" +
-                            "<div class='log-arrow-up'></div>" +
-                            "<li class='eborder-top'>" +
-                                "<a href='Administrador.aspx'><i class='icon_briefcase'></i>ADMINISTRADOR</a>" +
-                            "</li>" + 
+                            "<div class='log-arrow-up'></div>";
+        if (nombre_usuario == "Administrador") cabecera +=
+                             "<li class='eborder-top'>" +
+                                 "<a href='Administrador.aspx'><i class='icon_briefcase'></i>ADMINISTRADOR</a>" +
+                             "</li>";
+        cabecera +=
                             "<li class='eborder-top'>" +
                                 "<a href='Miperfil.aspx'><i class='icon_profile'></i>Mi Perfil</a>" +
                             "</li>" +

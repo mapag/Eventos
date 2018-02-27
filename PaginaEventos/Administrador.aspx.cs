@@ -16,8 +16,7 @@ public partial class Administrador : System.Web.UI.Page
     DataTable dt;
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
-        if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
+        if (Session["CodigoCuenta"].ToString() != "1") Response.Redirect("Pprincipal.aspx");
         string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
         if (imagen == null) imagen = "img/avatar2_small.jpg";
         string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
@@ -32,40 +31,28 @@ public partial class Administrador : System.Web.UI.Page
 
     protected void GenerarTabla()
     {
-        dt = ad.ObtenerTabla("eventos", "select e.codigo as Código, e.descripcion as Descripción, e.inicio as 'Fecha de Inicio', e.fin as 'Fecha de Fin', (case when e.estado = 1 then 'Si' else 'No' end) as Finalizado from eventos e");
+        dt = ad.ObtenerTabla("eventos", "select e.codigo as 'Código evento', e.descripcion as Descripción, c.codigo as 'Código Creador', c.nombre +' '+ c.apellido as Creador ,e.inicio as 'Fecha de Inicio', e.fin as 'Fecha de Fin', (case when e.estado = 1 then 'Si' else 'No' end) as Finalizado from eventos e inner join evento_por_cuenta exc on e.codigo = exc.evento inner join cuentas c on c.codigo = exc.cuenta where e.codigo <> 1 and exc.perfil = 1");
         go.MostrarGrid(ref grd_eventos, dt);
-    }
-
-    protected void BorrarFila(object sender, GridViewDeleteEventArgs e)
-    {
-        int codDueno = Int32.Parse(pe.DuenoCuenta(Int32.Parse(grd_eventos.Rows[e.RowIndex].Cells[2].Text), Int32.Parse(Session["CodigoCuenta"].ToString())));
-
-        if (codDueno == 1)
-        {
-            Session["CodigoEvento"] = grd_eventos.Rows[e.RowIndex].Cells[2].Text;
-            Session["NombreEvento"] = grd_eventos.Rows[e.RowIndex].Cells[3].Text;
-            Response.Redirect("ConfirmarBorrarEvento.aspx");
-        }
-        else
-        {
-            noBorrar.Text = "No se puede borrar el evento. \n Solo el CREADOR puede borrar este evento.";
-        }
-    }
-    protected void EditarFila(object sender, EventArgs e)
-    {
-        Session["CodigoEvento"] = grd_eventos.Rows[grd_eventos.SelectedIndex].Cells[2].Text;
-        Session["TipoEvento"] = ad.ObtenerValor("Select tipo from eventos where codigo = " + Session["CodigoEvento"]);
-        if (Session["TipoEvento"].ToString() == "6") Response.Redirect("GestionEvento.aspx");
-        else Response.Redirect("GestionViajes.aspx");
-    }
-    protected void btn_CrearEvento_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("CrearEvento.aspx");
     }
 
     protected void GenerarTablaCli()
     {
-        dt = ad.ObtenerTabla("cuentas", "select c.codigo as Código, c.nombre as Nombre, c.apellido as Apellido, c.mail as 'Correo Electrónico', c.telefono as Teléfono from cuentas c");
+        dt = ad.ObtenerTabla("cuentas", "select c.codigo as Código, c.nombre as Nombre, c.apellido as Apellido, c.mail as 'Correo Electrónico', c.telefono as Teléfono from cuentas c where c.codigo <> 1");
         go.MostrarGrid(ref grd_clientes, dt);
+    }
+
+
+    protected void grd_clientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        Session["NombreCuentaABorrar"] = grd_clientes.Rows[e.RowIndex].Cells[2].Text + " " + grd_clientes.Rows[e.RowIndex].Cells[3].Text;
+        Session["CodigoCuentaABorrar"] = grd_clientes.Rows[e.RowIndex].Cells[1].Text;
+        Response.Redirect("EliminarUsuario.aspx");
+    }
+    protected void grd_eventos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        Session["CodigoEvento"] = grd_eventos.Rows[e.RowIndex].Cells[1].Text;
+        Session["NombreEvento"] = grd_eventos.Rows[e.RowIndex].Cells[2].Text;
+        Session["NombreCreador"] = grd_eventos.Rows[e.RowIndex].Cells[4].Text;
+        Response.Redirect("EliminarEvento.aspx");
     }
 }

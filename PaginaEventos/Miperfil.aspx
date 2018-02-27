@@ -89,6 +89,12 @@
                                     <div class="bio-row">
                                         <p><span>Teléfono: </span><asp:TextBox ID="txt_tel" runat="server"></asp:TextBox></p>
                                     </div>
+                                    <div class="bio-row">
+                                        <p><span>Imagen abatar: </span><asp:TextBox ID="txt_abatar" runat="server"></asp:TextBox></p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Imagen Cartel: </span><asp:TextBox ID="txt_cartel" runat="server"></asp:TextBox></p>
+                                    </div>
                                 </div>
                             </div>
                         </section>

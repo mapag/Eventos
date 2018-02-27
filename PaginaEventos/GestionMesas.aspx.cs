@@ -71,9 +71,10 @@ public partial class GestionMesas : System.Web.UI.Page
     protected void btn_cambiarnombremesa_Click(object sender, EventArgs e)
     {
         if (txt_mesaactual.Text != "" && val.Alfanumerico(txt_mesaactual.Text) && ad.ContarRegistros("select * from mesas where nombre = '" + txt_mesaactual.Text + "' and evento = " + Session["CodigoEvento"]) == 0)
-        {
-            string mesa = ad.ObtenerValor("select codigo from mesas where nombre = '" + lbl_mesa.Text + "' and evento = " + Session["CodigoEvento"]);
+        {  
+            string mesa = ad.ObtenerValor("select codigo from mesas where nombre = '" + lbl_mesa.Text + "' and evento = " + Session["CodigoEvento"].ToString());
             ad.EjecutarConsulta("update mesas set nombre = '" + txt_mesaactual.Text + "' where codigo = " + mesa);
+            //txt_mesaactual.Text = "update mesas set nombre = '" + txt_mesaactual.Text + "' where codigo = " + mesa;
             lbl_mesa.Text = txt_mesaactual.Text;
         }
     }
@@ -83,7 +84,7 @@ public partial class GestionMesas : System.Web.UI.Page
         {
             maxpos++;
             ad.EjecutarConsulta("insert into mesas (nombre, evento) values ('" + txt_nuevamesa.Text + "'," + Session["CodigoEvento"] + " )");
-            string mesa = ad.ObtenerValor("select codigo from mesas where nombre = '" + txt_nuevamesa.Text + "' and evento = " + Session["CodigoEvento"]);
+            string mesa = ad.ObtenerValor("select codigo from mesas where nombre = '" + txt_nuevamesa.Text + "' and evento = " + Session["CodigoEvento"].ToString());
             cargarvalores(mesa);
             obtenerdt();
         }

@@ -14,27 +14,17 @@ public partial class VerMesas : System.Web.UI.Page
     AccesoDatos ad = new AccesoDatos();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
-        if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
-        if (Session["CodigoEvento"] == null) Response.Redirect("Pprincipal.aspx");
-        string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
-        if (imagen == null) imagen = "img/avatar2_small.jpg";
-        string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
-        lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
-        /*lbl_mesas.Text = "<div class='col-sm-3'>" +
-                            "<div class='well'>" +
-                                "<h1 style='margin-bottom: 30px;'><asp:Label ID='nombreMesa1' runat='server'>Mesa Principal</asp:Label></h1>" +
-                                "<ul>" +
-                                    "<li style='font-size: 20px;'><i class='fa fa-check-square'></i><asp:Label ID='nombreInvitado1' runat='server'> Jorge Lopez</asp:Label></li>" +
-                                    "<li style='font-size: 20px;'><i class='fa fa-check-square-o'></i> Mateo Pagniez</li>" +
-                                    "<li style='font-size: 20px;'><i class='fa fa-check-square'></i> Lautaro Rodriguez</li>" +
-                                    "<li style='font-size: 20px;'><i class='fa fa-check-square-o'></i> Gianfranco Lopez</li>" +
-                                "</ul>" +
-                                "<hr/>" +
-                                "<h3><a class='btn btn-default' href='#'><i class='icon-ok'></i>Modificar Mesa</a></h3>" +
-                            "</div>" +
-                        "</div>";*/
-        cargar_mesas();
+        if (!IsPostBack)
+        {
+            if (Session["CodigoCuenta"] == null) Session["CodigoCuenta"] = 1;
+            if (Session["CodigoCuenta"] == null) Response.Redirect("Pprincipal.aspx");
+            if (Session["CodigoEvento"] == null) Response.Redirect("Pprincipal.aspx");
+            string imagen = ad.ObtenerValor("Select imagen from cuentas where codigo = " + Session["CodigoCuenta"]);
+            if (imagen == null) imagen = "img/avatar2_small.jpg";
+            string nombre = ad.ObtenerValor("Select nombre from cuentas where codigo = " + Session["CodigoCuenta"]);
+            lbl_cabecera.Text = cabecera.GenerarCabecera(imagen, nombre, ad.ContarRegistros("select * from evento_por_cuenta where confirmacion = 0 and cuenta = " + Session["CodigoCuenta"]));
+            cargar_mesas();
+        }
     }
 
     private void cargar_mesas()

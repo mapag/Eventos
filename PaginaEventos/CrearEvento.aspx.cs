@@ -34,37 +34,34 @@ public partial class CrearEvento : System.Web.UI.Page
         {
             reiniciarerrores();
             bool correcto = true;
-            //Label1.Text = txt_dateinicio.Text + " " + txt_timeinicio.Text;
-            //Label1.Text = ddl_tipoevento.SelectedItem.Value;
             if (txt_descripcion.Text == "")
             {
                 lbl_error1.Text = "La descripción es un campo obligatorio.";
                 correcto = false;
             }
-            string[] hoy = DateTime.Today.ToString().Split('/', ' ');
-            string correccion = hoy[0];
-            hoy[0] = hoy[2];
-            hoy[2] = correccion;
 
-            string[] fechainicio = txt_dateinicio.Text.Split('-');
-            string[] fechafin = txt_datafin.Text.Split('-');
+            DateTime fechainicio = new DateTime();
+            DateTime fechafin = new DateTime();
+            if (txt_dateinicio.Text != "") fechainicio = DateTime.Parse(txt_dateinicio.Text + " " + txt_timeinicio.Text);
+            if (txt_datafin.Text != "") fechafin = DateTime.Parse(txt_datafin.Text + " " + txt_timefin.Text);
 
             if (txt_dateinicio.Text == "")
             {
                 lbl_error2.Text = "La fecha de inicio es necesaria para crear el evento, no así su hora de inicio. La fecha de fin no es obligatoria, pero si recomendable. Ambas fechas son modificables mas adelante.";
                 correcto = false;
             }
-            if (val.ComparacionFechas(hoy, ">=", fechainicio))
+            if (DateTime.Compare(fechainicio, DateTime.Today) < 0)
             {
                 lbl_error3.Text = "La fecha de inicio no puede ser anterior a la fecha actual.";
                 correcto = false;
             }
-            if (txt_datafin.Text != "" && val.ComparacionFechas(fechainicio, ">", fechafin))
+            if (txt_datafin.Text != "" && DateTime.Compare(fechainicio, fechafin) < 0)
             {
                 lbl_error3.Text += " La fecha actual no puese ser posterior a la fecha de fin de evento.";
                 correcto = false;
             }
-            if (correcto) GenerarEvento();//lbl_error4.Text = "No hay errores";//
+            if (correcto) GenerarEvento(fechainicio, fechafin);//lbl_error4.Text = "No hay errores";//*/
+
         }
         catch (Exception ee)
         {
@@ -79,15 +76,14 @@ public partial class CrearEvento : System.Web.UI.Page
         Response.Redirect("Inicio.aspx");
     }
 
-    protected void GenerarEvento()
+    protected void GenerarEvento(DateTime f1, DateTime f2)
     {
-        DateTime diainicio = new DateTime();
-        DateTime diafin = new DateTime();
-        diainicio = DateTime.Parse(txt_dateinicio.Text);
-        diafin = DateTime.Parse(txt_datafin.Text);
+        //lbl_error2.Text = "111";
         string id = ad.ObtenerValor("SELECT (MAX(codigo)+1) AS codigo FROM eventos");
-        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin, estado) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + diainicio.ToString("d-MM-yyyy") + " " + txt_timeinicio.Text + "', '" + diafin.ToString("d-MM-yyyy") + " " + txt_timefin.Text + "', 0)";
+        if (DateTime.Compare(f2, f1) < 0) f2 = f1;
+        string consultaSQL = "insert into eventos (codigo, descripcion, tipo, inicio, fin, estado) values ( " + id + ", '" + txt_descripcion.Text + "'," + ddl_tipoevento.SelectedItem.Value + ", '" + f1.ToString("dd/MM/yyyy hh:mm t'm'") + "', '" + f2.ToString("dd/MM/yyyy hh:mm t'm'") + "', 0)";
         string consultaSQL2 = "insert into evento_por_cuenta (evento, cuenta, perfil, estado, confirmacion) values (" + id + ", " + Session["CodigoCuenta"] + ", 1, 0, 1)";
+        lbl_error2.Text = consultaSQL;
         ad.EjecutarConsulta(consultaSQL);
         ad.EjecutarConsulta(consultaSQL2);
         Response.Redirect("Inicio.aspx");
@@ -96,7 +92,7 @@ public partial class CrearEvento : System.Web.UI.Page
     protected void reiniciarerrores()
     {
         lbl_error1.Text = "";
-        lbl_error2.Text = "";
+        //lbl_error2.Text = "";
         lbl_error3.Text = "";
     }
 }

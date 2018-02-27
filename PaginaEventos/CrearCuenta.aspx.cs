@@ -25,6 +25,11 @@ public partial class CrearCuenta : System.Web.UI.Page
             lbl_nombre.Text = "El campo debe ser un valor alfabetico.";
             correcto = false;
         }
+        if (txt_nombre.Text == "Administrador")
+        {
+            lbl_nombre.Text = "Este es un nombre reservado.";
+            correcto = false;
+        }
         if (txt_apellido.Text == "" || !val.Alfabetico(txt_apellido.Text))
         {
             lbl_apellido.Text = "El campo debe ser un valor alfabetico.";
