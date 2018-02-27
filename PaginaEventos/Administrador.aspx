@@ -22,14 +22,6 @@
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <!-- full calendar css-->
-    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
-    <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
-    <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
-    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/fullcalendar.css" />
     <link href="css/widgets.css" rel="stylesheet" />
@@ -105,29 +97,6 @@
                             <div class="title">Clientes Totales</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-1"></div>
-                <div class="col-lg-3">
-                    <section class="panel">
-                        <header class="panel-heading" style="text-align: center;">
-                            Eventos Activos
-                        </header>
-                        <div class="panel-body text-center">
-                            <canvas id="pieEve" height="300" width="400"></canvas>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-lg-3"></div>
-                <div class="col-lg-3">
-                    <section class="panel">
-                        <header class="panel-heading" style="text-align: center;">
-                            Clientes Activos
-                        </header>
-                        <div class="panel-body text-center">
-                            <canvas id="pieCli" height="300" width="400"></canvas>
-                        </div>
-                    </section>
                 </div>
             </section>
 
@@ -224,37 +193,6 @@
                     el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
                 }
             });
-        });
-
-        //pie
-        $(document).ready(function () {
-
-
-            var pieData = [
-        {
-            value: 12,
-            color: "#1a2732"
-        }, {
-            value: 5,
-            color: "#57889c"
-        }
-            ];
-            new Chart(document.getElementById("pieEve").getContext("2d")).Pie(pieData);
-        });
-
-        $(document).ready(function () {
-
-
-            var pieData = [
-        {
-            value: 17,
-            color: "#26c281"
-        }, {
-            value: 5,
-            color: "#d1b993"
-        }
-            ];
-            new Chart(document.getElementById("pieCli").getContext("2d")).Pie(pieData);
         });
     </script>
 </body>
