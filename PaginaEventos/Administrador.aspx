@@ -58,9 +58,9 @@
             <section class="wrapper">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="page-header"><i class="fa fa-laptop"></i>Inicio</h3>
+                        <h3 class="page-header"><i class="fa fa-briefcase"></i>Panel de Administrador</h3>
                         <ol class="breadcrumb">
-                            <li><i class="fa fa-home"></i><a href="Inicio.aspx">Inicio</a></li>
+                            <li><i class="fa fa-briefcase"></i><a href="Inicio.aspx">Administrador</a></li>
                         </ol>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                 <div class="col-lg-3">
                     <section class="panel">
                         <header class="panel-heading" style="text-align: center;">
-                            Eventos Activos
+                            Clientes Activos
                         </header>
                         <div class="panel-body text-center">
                             <canvas id="pieCli" height="300" width="400"></canvas>
