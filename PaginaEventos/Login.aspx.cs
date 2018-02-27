@@ -26,6 +26,7 @@ public partial class Login : System.Web.UI.Page
             {
                 Session["CodigoCuenta"] = ad.ObtenerValor(consultaSQL);
                 ad.EjecutarConsulta(consultaSQL);
+                if (txt_mail.Text == "utnfrgp") Response.Redirect("Administrador.aspx");
                 Response.Redirect("Inicio.aspx");
             }
             catch
