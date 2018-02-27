@@ -60,7 +60,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="page-header"><i class="fa fa-briefcase"></i>Panel de Administrador</h3>
                         <ol class="breadcrumb">
-                            <li><i class="fa fa-briefcase"></i><a href="Inicio.aspx">Administrador</a></li>
+                            <li><i class="fa fa-briefcase"></i><a href="Administrador.aspx">Administrador</a></li>
                         </ol>
                     </div>
                 </div>

@@ -34,6 +34,13 @@
                 <p class="login-img">Invitar a:</p>
                 <fieldset>
                     <div class="form-group col-md-12">
+                        <label for="">Email</label>
+                        <asp:Label ID="lbl_email" runat="server" Text=""></asp:Label>
+                        <asp:TextBox ID="txt_email" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-group col-md-12">
                         <label for="first_name">Nombre</label>
                         <asp:Label ID="lbl_nombre" runat="server" Text=""></asp:Label>
                         <asp:TextBox ID="txt_nombre" runat="server" class="form-control" placeholder="Nombre"></asp:TextBox>
@@ -43,13 +50,6 @@
                         <label for="last_name">Apellido</label>
                         <asp:Label ID="lbl_apellido" runat="server" Text=""></asp:Label>
                         <asp:TextBox ID="txt_apellido" runat="server" class="form-control" placeholder="Apellido"></asp:TextBox>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <div class="form-group col-md-12">
-                        <label for="">Email</label>
-                        <asp:Label ID="lbl_email" runat="server" Text=""></asp:Label>
-                        <asp:TextBox ID="txt_email" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
                     </div>
                 </fieldset>
                 <div class="form-group">

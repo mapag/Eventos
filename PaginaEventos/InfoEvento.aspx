@@ -66,13 +66,13 @@
 
             <section class="wrapper">
 
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <section class="panel">
                         <header class="panel-heading">
                             Invitados Confirmados
                         </header>
                         <div class="panel-body text-center">
-                            <canvas id="pie" height="300" width="400"></canvas>
+                            <canvas id="pie" style="overflow:hidden;" height="300" width="400"></canvas>
                         </div>
                     </section>
                 </div>

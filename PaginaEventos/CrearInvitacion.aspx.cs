@@ -18,7 +18,6 @@ public partial class CrearInvitacion : System.Web.UI.Page
     }
     protected void btn_registrar_Click(object sender, EventArgs e)
     {
-        enviarMail(txt_email.Text);
         Reiniciar_lbls();
         bool correcto = true;
         if (txt_nombre.Text == "" || !val.Alfabetico(txt_nombre.Text))
@@ -38,6 +37,7 @@ public partial class CrearInvitacion : System.Web.UI.Page
         }
         if (correcto)
         {
+            enviarMail(txt_email.Text);
             string consultaSQL = "if not exists (select * from cuentas where mail = '" + txt_email.Text + "') begin insert into cuentas (nombre, apellido, mail) values ('" + txt_nombre.Text + "', '" + txt_apellido.Text + "', '" + txt_email.Text + "') end";
             ad.EjecutarConsulta(consultaSQL);
             string cuenta = ad.ObtenerValor("select codigo from cuentas where mail = '" + txt_email.Text + "'");
@@ -57,6 +57,11 @@ public partial class CrearInvitacion : System.Web.UI.Page
     {
         lbl_apellido.ForeColor = lbl_email.ForeColor = lbl_error.ForeColor = lbl_nombre.ForeColor = Color.OrangeRed;
         lbl_apellido.Text = lbl_email.Text = lbl_error.Text = lbl_nombre.Text = "";
+    }
+    private void txt_email_Leave(object sender, System.EventArgs e)
+    {
+        lbl_error.Text = "Pito";
+        lbl_error.Visible = true;
     }
 
     protected void enviarMail( string mailUsuario )
