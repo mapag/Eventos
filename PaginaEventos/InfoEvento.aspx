@@ -43,13 +43,6 @@
 
         <script src="Login.aspx"></script>
 
-        <!--BARRA LATERAL start
-        <script src="js/barraLateral.js"></script>
-        BARRA LATERAL end-->
-
-
-
-        <!--CONTENIDO start -->
         <section id="main-content">
             <section class="wrapper">
                 <div class="row">
@@ -67,7 +60,7 @@
             <section class="wrapper">
                 <asp:HiddenField ID="Confirmados" runat="server" />
                 <asp:HiddenField ID="NoConfirmados" runat="server" /> 
-                <div class="col-lg-4">
+                <div class="col-lg-6 col-xs-12">
                     <section class="panel">
                         <header class="panel-heading">
                             Invitados Confirmados
@@ -77,32 +70,17 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-6 col-xs-12">
                     <section class="panel">
                         <header class="panel-heading">
                             Faltan Confirmar:
                         </header>
                         <div class="panel-body text-center">
                             <ul style="text-align: left; font-size: 20px;">
-                                <li>Jorge Lopez</li>
-                                <li>Mateo Pagniez</li>
-                                <li>Lautaro Rodriguez</li>
+                                <asp:Label ID="lbl_noconfirmados" runat="server" Text=""></asp:Label>
                             </ul>
                         </div>
                     </section>
-                </div>
-                <div class="col-sm-3">
-                    <div class="well">
-                        <h1 style="margin-bottom: 30px;">Mesa 2</h1>
-                        <ul>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square"></i>Jorge Lopez</li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square-o"></i>Mateo Pagniez</li>
-                            <li style="font-size: 20px;"><i class="fa fa-check-square"></i>Lautaro Rodriguez</li>
-                        </ul>
-
-                        <hr />
-                        <h3><a class="btn btn-default" href="#"><i class="icon-ok"></i>Modificar Mesa</a></h3>
-                    </div>
                 </div>
             </section>
 
